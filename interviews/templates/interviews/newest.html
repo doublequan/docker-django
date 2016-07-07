@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Newest</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    {% load staticfiles %}
+    <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/newest.css' %}" rel="stylesheet">
+
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/newest.js' %}"></script>
+
+
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-extra navbar-fixed-top">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li id="home">
+                    <a href="{% url 'interviews:index' %}">Home</a>
+                </li>
+
+                <li class="active" id="newest">
+                    <a href="newest/"><font color="orange">Newest</font></a>
+                </li>
+
+                <li id="flag">
+                    <a href="flag/">FLAG</a>
+                </li>
+                <!-- TODO: not hard code -->
+            </ul>
+        </div><!--/.navbar-collapse -->
+    </div>
+</div>
+
+<header class="site-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8">
+                <form class="" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-1">
+
+            </div>
+            <div class="col-xs-3">
+                <!--<div class="form-group">-->
+                    <!--<select class="form-control">-->
+                        <!--<option>Choose one filter</option>-->
+                        <!--<option>Facebook</option>-->
+                        <!--<option>Linkedin</option>-->
+                        <!--<option>Amazon</option>-->
+                        <!--<option>Google</option>-->
+                        <!--<option>Others</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <p>共为您找到XXX个结果</p>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row results">
+        {% for item in items %}
+        <div class="col-xs-7 content-wrapper">
+            <div class="content">
+            <a class="content-title" href="{{ item.link }}" target="_blank">{{ item.title }}</a>
+            <p>
+                <span class="content-time">{{ item.time }} - </span>
+                <span class="content-desc">{{ item.desc }}</span>
+            </p>
+            <a class="content-source" href="{{ item.source_link }}" target="_blank">From {{ item.source }}</a>
+            </div>
+        </div>
+        </br>
+        </br>
+        {% endfor %}
+    </div> <!-- / row -->
+
+</div>
+
+</body>
+
+</html>

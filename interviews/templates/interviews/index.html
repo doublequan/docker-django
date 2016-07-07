@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>面经搜索</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    {% load staticfiles %}
+    <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+
+
+    <!--[if lt IE 9]>
+        <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-extra">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active" id="home">
+                        <a href=""><font color="orange">Home</font></a>
+                    </li>
+
+                    <li id="newest">
+                        <a href="newest/">Newest</a>
+                    </li>
+
+                    <li id="flag">
+                        <a href="flag/">FLAG</a>
+                    </li>
+                    <!-- TODO: not hard code -->
+                </ul>
+            </div><!--/.navbar-collapse -->
+
+
+
+        </div>
+    </div>
+
+    <header class="site-header jumbotron">
+        <div class="site-nav">
+            <a href="#about">About</a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>面 经 搜 索</h1>
+                    <p>北美 IT 岗位面试经验搜索<br>
+                        <span class="package-amount">已收录了 <strong>{{ total_num }}</strong> 个一手面经</span>
+                    </p>
+                    <form class="" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree">
+                            <i class="fa fa-search" id="btn-search"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="board col-xs-12 col-md-12 col-lg-6">
+                <div class="board-header">
+                    <span>最新面经</span>
+                    <a href="#">More</a>
+                </div>
+
+                <div class="board-content">
+                    {% for row in example %}
+                    <div>
+                        <a href="#">{{ row }}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+            {% for board in boards %}
+            <div class="board col-xs-12 col-md-6 col-lg-3">
+                <div class="board-header">
+                    <span>{{ board }}</span>
+                    <a href="#">More</a>
+                </div>
+
+                <div class="board-content">
+                    {% for row in example %}
+                    <div>
+                        <a href="#">{{ row }}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div> <!-- / row -->
+    </div>
+
+    <footer id="footer" class="footer ">
+        <div class="footer-about " id="about">
+            <h4>关于 本网站</h4>
+            <p>本网站尚在开发中</p>
+            <p>有任何建议欢迎反馈到邮件：###@###.com</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

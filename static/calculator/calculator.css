@@ -1,0 +1,56 @@
+#content {
+	width: 500px;
+	margin: auto;
+
+	/* border: 1px solid black; */
+}
+
+
+
+.screen {
+	position: relative;
+	width: 90%;
+	height: 100px;
+	margin: 10% auto;
+	border: thick solid black; 
+	background-color: #EEFFBB;
+}
+
+#display {
+	position: absolute;
+	bottom: 0px;
+	right: 2%;
+	width: 95%;
+	font-size: 60px;
+	text-align: right;
+	/* margin: auto; */
+	/* border: 1px solid black; */
+}
+
+#buttons-container {
+	width: 90%;
+	/* border: 1px solid black; */
+	margin: 10% auto;
+	padding: 5%;
+}
+
+.button {
+	text-align: center;
+	font-size: 40px;
+	width: 14%;
+	padding: 2%;
+	margin: 2%; 
+	border: thick solid black; 
+	background-color: #EEFFBB;
+	-webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+	float: left;
+}
+
+.operator {
+	background-color: #FFDDAA;
+}
+
+div.button:hover {
+	background-color: #CCEEFF;
+}
