@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90e5c599-acf1-45cf-a349-49873ee9796b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/web_scrapy/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/web_scrapy/postgre_script.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/scrapy/web_scrapy/postgre_script.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/scrapy/web_scrapy/scrapy.cfg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/scrapy/web_scrapy/web_scrapy/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/scrapy/web_scrapy/web_scrapy/items.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/scrapy/web_scrapy/web_scrapy/pipelines.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/scrapy/web_scrapy/web_scrapy/settings.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/scrapy/web_scrapy/web_scrapy/spiders/1p3.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/scrapy/web_scrapy/web_scrapy/spiders/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/interviews/migrations/0001_initial.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/interviews/migrations/0002_auto_20160709_0750.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/interviews/migrations/0003_auto_20160709_0750.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/interviews/migrations/0004_auto_20160709_0751.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/interviews/migrations/0005_auto_20160709_0753.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/interviews/migrations/0006_auto_20160709_0754.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/interviews/migrations/0007_auto_20160709_0801.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/interviews/migrations/0008_delete_post.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/interviews/migrations/0009_post.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/interviews/migrations/0010_auto_20160709_0810.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/interviews/migrations/0011_statistic_fuck.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/interviews/admin.py" afterPath="$PROJECT_DIR$/web/interviews/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/interviews/models.py" afterPath="$PROJECT_DIR$/web/interviews/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/interviews/views.py" afterPath="$PROJECT_DIR$/web/interviews/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/web_django/settings.py" afterPath="$PROJECT_DIR$/web/web_django/settings.py" />
     </list>
     <ignored path="django.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,16 +41,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="manage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/manage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="5" column="64" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/web_django/settings.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,14 +51,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/interviews/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+            <state relative-caret-position="236">
+              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="0001_initial.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/interviews/migrations/0001_initial.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -79,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/web/interviews/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="110">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="32" column="21" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -101,8 +99,10 @@
         <entry file="file://$PROJECT_DIR$/web/interviews/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
-              <caret line="6" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-              <folding />
+              <caret line="6" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,16 +135,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-110">
               <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/web_scrapy/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="2" selection-end-line="5" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -186,9 +176,10 @@
         <option value="$PROJECT_DIR$/web/web_scrapy/postgre_script.py" />
         <option value="$PROJECT_DIR$/web/web_scrapy_old/web_scrapy/pipelines.py" />
         <option value="$PROJECT_DIR$/web/web_scrapy_old/postgre_script.py" />
-        <option value="$PROJECT_DIR$/web/interviews/admin.py" />
         <option value="$PROJECT_DIR$/web/interviews/views.py" />
+        <option value="$PROJECT_DIR$/web/interviews/admin.py" />
         <option value="$PROJECT_DIR$/web/interviews/models.py" />
+        <option value="$PROJECT_DIR$/web/interviews/migrations/0001_initial.py" />
       </list>
     </option>
   </component>
@@ -274,46 +265,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web_scrapy_old" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web_scrapy_old" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web_scrapy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="web_scrapy" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -351,6 +302,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="interviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interviews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -717,9 +690,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -748,8 +721,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web_django/wsgi.py" />
-    <entry file="file://$PROJECT_DIR$/interviews/tests.py" />
     <entry file="file://$PROJECT_DIR$/interviews/models.py" />
     <entry file="file://$PROJECT_DIR$/interviews/admin.py" />
     <entry file="file://$PROJECT_DIR$/interviews/apps.py" />
@@ -1007,14 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/interviews/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/interviews/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1025,21 +988,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/interviews/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/interviews/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <caret line="32" column="21" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/interviews/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+        <state relative-caret-position="236">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/interviews/migrations/0002_post_create_time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-94">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/interviews/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
