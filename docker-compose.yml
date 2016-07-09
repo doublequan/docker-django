@@ -2,12 +2,32 @@ version: '2'
 services:
   db:
     image: postgres
+    # volumes:
+    #   - ./postgresql:/var/lib/postgresql
+    # ports:
+    #   - "5432:5432"
+    container_name: db_postgresql_container
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: web_dockerfile
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/code
+      - ./web:/code
     ports:
       - "8000:8000"
     depends_on:
       - db
+    container_name: web_django_container
+  # scrapy:
+  #   build:
+  #     context: .
+  #     dockerfile: scrapy_dockerfile
+  #   command: /bin/bash
+  #   volumes:
+  #     - ./scrapy:/code
+  #   depends_on:
+  #     - db
+  #   container_name: scrapy_container
+
+

@@ -59,10 +59,11 @@
     </div>
 </div>
 
-<header class="site-header">
-    <div class="container">
+<div id="wrapper">
+<!--<header class="site-header">-->
+    <div class="container search-bar">
         <div class="row">
-            <div class="col-xs-8">
+            <div class="col-xs-7">
                 <form class="" role="search">
                     <div class="form-group">
                         <input type="text" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree">
@@ -70,9 +71,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-xs-1">
 
-            </div>
             <div class="col-xs-3">
                 <!--<div class="form-group">-->
                     <!--<select class="form-control">-->
@@ -93,28 +92,29 @@
             </div>
         </div>
     </div>
-</header>
+<!--</header>-->
 
-<div class="container">
-    <div class="row results">
-        {% for item in items %}
-        <div class="col-xs-7 content-wrapper">
-            <div class="content">
-            <a class="content-title" href="{{ item.link }}" target="_blank">{{ item.title }}</a>
-            <p>
-                <span class="content-time">{{ item.time }} - </span>
-                <span class="content-desc">{{ item.desc }}</span>
-            </p>
-            <a class="content-source" href="{{ item.source_link }}" target="_blank">From {{ item.source }}</a>
+    <div class="container">
+        <div class="row results">
+            {% for item in items %}
+            <div class="col-xs-7 content-wrapper">
+                <div class="content">
+                    <a class="content-title" href="{{ item.link }}" target="_blank">{{ item.title }}</a>
+                    <p>
+                        <span class="content-time">{{ item.time }} - </span>
+                        <span class="content-desc">{{ item.desc }}</span>
+                    </p>
+                    <div class="content-footer">
+                        <a class="content-source" href="{{ item.source_link }}" target="_blank">{{ item.source }}</a>
+                        &nbsp;&nbsp;&nbsp;
+                        <a class="content-source" href="{{ item.link }}" target="_blank">查看原帖</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        </br>
-        </br>
-        {% endfor %}
-    </div> <!-- / row -->
-
+            {% endfor %}
+        </div> <!-- / row -->
+    </div>
 </div>
-
 </body>
 
 </html>

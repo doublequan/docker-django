@@ -22,12 +22,12 @@ body {
     padding-bottom: 5px;
 }
 
-.site-header {
+.search-bar {
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
-.site-header .search {
+.search-bar .search {
     border: 2px solid #222222;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -38,7 +38,7 @@ body {
     text-align: left;
 }
 
-.site-header .fa {
+.search-bar .fa {
     position: absolute;
     right: 25px;
     top: 5px;
@@ -68,6 +68,7 @@ body {
 }
 
 .content-title {
+    color: #259;
     font-size: 18px;
 }
 
@@ -79,9 +80,17 @@ body {
 }
 
 .content-source {
-    color: #3c763d;
+    color: #999999;
 }
 
+.content-footer {
+    margin-top: 5px;
+}
+
+
+#wrapper {
+    padding-left: 10%;
+}
 
 em {
     font-style: normal;
