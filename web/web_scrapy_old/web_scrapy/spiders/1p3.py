@@ -18,11 +18,6 @@ class oneP3Spider(scrapy.Spider):
         # "http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=187005&extra=page%3D1%26filter%3Dsortid%26sortid%3D192%26sortid%3D192",
     ]
 
-    def __init__(self):
-        db_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        self.db = sqlite3.connect(db_path + "/db.sqlite3")
-
-
     def parse(self, response):
         '''
         parse the list page of 1p3.com, yield separate pages for late parse
@@ -63,7 +58,7 @@ class oneP3Spider(scrapy.Spider):
 
         desc = self.process_desc_from1p3(desc_unprocess)
 
-        item = IEItem()
+        item = postItem()
         item['title'] = title
         item['link'] = link
         item['time'] = time

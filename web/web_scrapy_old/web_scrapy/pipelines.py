@@ -16,20 +16,20 @@ class Pipeline1(object):
     def process_item(self, item, spider):
         # print "*****************process items****************"
 
-        # print item['title']
-        # print item['link']
-        # print item['time']
-        # print item['source']
-        # print item['desc']
-        cu = self.conn.cursor()
-        cu.execute("insert into interviews_post values("
-                   "'" + item['title'] + "', '" +
-                   item['link'] + "', '" +
-                   item['time'] + "', '" +
-                   item['source'] + "', '" +
-                   item['desc'] + "', '" +
-                   item['tag'] +
-                   "')")
-        self.conn.commit()
-        cu.close()
-        return item
+        print item['title']
+        print item['link']
+        print item['time']
+        print item['source']
+        print item['desc']
+        # cu = self.conn.cursor()
+        # cu.execute("insert into interviews_post values("
+        #            "'" + item['title'] + "', '" +
+        #            item['link'] + "', '" +
+        #            item['time'] + "', '" +
+        #            item['source'] + "', '" +
+        #            item['desc'] + "', '" +
+        #            item['tag'] +
+        #            "')")
+        # self.conn.commit()
+        # cu.close()
+        # return item
