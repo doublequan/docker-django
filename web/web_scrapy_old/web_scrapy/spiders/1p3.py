@@ -19,9 +19,8 @@ class oneP3Spider(scrapy.Spider):
     ]
 
     def __init__(self):
-        pass
-        # db_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        # self.db = sqlite3.connect(db_path + "/db.sqlite3")
+        db_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        self.db = sqlite3.connect(db_path + "/db.sqlite3")
 
 
     def parse(self, response):

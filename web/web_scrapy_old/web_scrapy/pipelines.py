@@ -5,14 +5,18 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
-import psycopg2
-
+# import psycopg2
+import sys
+sys.path.append("/code/interviews")
+sys.path.append("/code")
+# from interviews.models import Post
 
 class Pipeline1(object):
     def __init__(self):
+        pass
         # db_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         # self.db = sqlite3.connect(db_path + "/db.sqlite3")
-        self.conn = psycopg2.connect("dbname = postgres user = postgres")
+        # self.conn = psycopg2.connect("dbname = test user = postgres")
 
     def process_item(self, item, spider):
         # print "*****************process items****************"
@@ -35,3 +39,4 @@ class Pipeline1(object):
         cu.close()
         return item
 
+print sys.path
