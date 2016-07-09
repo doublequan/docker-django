@@ -1,34 +1,24 @@
-# from twisted.internet import reactor
-# from scrapy.crawler import CrawlerRunner, CrawlerProcess
-# from scrapy.utils.log import configure_logging
+from twisted.internet import reactor
+from scrapy.crawler import CrawlerRunner, CrawlerProcess
+from scrapy.utils.log import configure_logging
 
 
-import sys
-sys.path.append("/code/")
-
-import os
-
-# set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'web_django.settings')
-
-from django.conf import settings  # noqa
-
-from web.interviews.models import Post
-
+# import sys
+# sys.path.append("/code/interviews/")
 
 # import os
 # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "web_django.settings")
 
-# from django.apps import apps
-#
-# post = apps.get_models("interviews.Post")
-# print post
+import psycopg2
 
+
+conn = psycopg2.connect(database="postgres", user="postgres", host="db", port="5432")
+cur = conn.cursor()
+cur.execute("CREATE TABLE testFuck(id serial PRIMARY KEY, num integer,data varchar);")
+conn.commit()
 
 # import models
 # from interviews.models import Post
-
-print "haha"
 
 # from 1p3 import oneP3Spider
 

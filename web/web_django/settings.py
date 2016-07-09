@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'interviews.apps.InterviewsConfig',
-    'web_scrapy.apps.WebScrapyConfig',
+    # 'web_scrapy.apps.WebScrapyConfig',
     # 'apps.interviews',
     # 'apps.web_scrapy',
 
