@@ -136,3 +136,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     '/static/',
 ]
+
+
+DEFAULT_CHARSET = 'utf-8'

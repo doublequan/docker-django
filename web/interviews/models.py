@@ -12,8 +12,11 @@ class Post(models.Model):
     link = models.TextField()
     create_time = models.DateTimeField(default=timezone.now)
     source = models.CharField(max_length=200)
-    desc = models.TextField()
+    description = models.TextField()
     tag = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.source + " : " + self.title
 
 
 class Statistic(models.Model):

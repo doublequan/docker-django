@@ -24,7 +24,7 @@ class Pipeline1(object):
         # print item['tag']
         cu = self.conn.cursor()
 
-        cu.execute("INSERT INTO interviews_post (title, link, create_time, source, desc, tag)"
+        cu.execute("INSERT INTO interviews_post (title, link, create_time, source, description, tag)"
                    " VALUES (%s, %s, %s, %s, %s, %s);", (
             item['title'],
             item['link'],
