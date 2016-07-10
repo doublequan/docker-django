@@ -16,24 +16,32 @@ class Pipeline1(object):
     def process_item(self, item, spider):
         # print "*****************process items****************"
 
-        print item['title']
-        print item['link']
-        print item['create_time']
-        print item['source']
-        print item['desc']
-        print item['tag']
-        # cu = self.conn.cursor()
-        #
-        # cu.execute("INSERT INTO interviews_post (title, link, create_time, ) VALUES (1, 'Cheese', 9.99);")
-        #
-        # # cu.execute("insert into interviews_post values("
-        # #            "'" + item['title'] + "', '" +
-        # #            item['link'] + "', '" +
-        # #            item['time'] + "', '" +
-        # #            item['source'] + "', '" +
-        # #            item['desc'] + "', '" +
-        # #            item['tag'] +
-        # #            "')")
-        # self.conn.commit()
-        # cu.close()
-        # return item
+        # print item['title']
+        # print item['link']
+        # print item['create_time']
+        # print item['source']
+        # print item['desc']
+        # print item['tag']
+        cu = self.conn.cursor()
+
+        cu.execute("INSERT INTO interviews_post (title, link, create_time, source, desc, tag)"
+                   " VALUES (%s, %s, %s, %s, %s, %s);", (
+            item['title'],
+            item['link'],
+            "'" + item['create_time'] + "'",
+            item['source'],
+            item['desc'],
+            item['tag']
+        ))
+
+        # cu.execute("insert into interviews_post values("
+        #            "'" + item['title'] + "', '" +
+        #            item['link'] + "', '" +
+        #            item['time'] + "', '" +
+        #            item['source'] + "', '" +
+        #            item['desc'] + "', '" +
+        #            item['tag'] +
+        #            "')")
+        self.conn.commit()
+        cu.close()
+        return item

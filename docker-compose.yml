@@ -8,15 +8,16 @@ services:
     #   - "5432:5432"
     container_name: db_postgresql_container
   web:
-    build:
-      context: .
-      dockerfile: web_dockerfile
+    # build:
+      # context: .
+      # dockerfile: web_dockerfile
+    image: billdqu/web_django:0.5
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./web:/code
     ports:
       - "8000:8000"
-    depends_on:
+    depends_on: 
       - db
     container_name: web_django_container
   # scrapy:

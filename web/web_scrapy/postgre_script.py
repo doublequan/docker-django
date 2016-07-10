@@ -3,19 +3,26 @@ from scrapy.crawler import CrawlerRunner, CrawlerProcess
 from scrapy.utils.log import configure_logging
 
 
-# import sys
-# sys.path.append("/code/interviews/")
-
-# import os
-# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "web_django.settings")
 
 import psycopg2
 
 
-conn = psycopg2.connect(database="postgres", user="postgres", host="db", port="5432")
-cur = conn.cursor()
-cur.execute("CREATE TABLE testFuck(id serial PRIMARY KEY, num integer,data varchar);")
-conn.commit()
+# conn = psycopg2.connect(database="postgres", user="postgres", host="db", port="5432")
+# cu = conn.cursor()
+#
+# # cu.execute("SELECT * FROM interviews_post where source = %s ", ("1p4",))
+# # print cu.fetchall()
+#
+# cu.execute("INSERT INTO interviews_post (title, link, create_time, source, description, tag)"
+#      " VALUES (%s, %s, %s, %s, %s, %s);", (
+#          "New Title",
+#          "www.link.com",
+#          "'" + "2016-07-09 09:40:58" + "'",
+#          "source",
+#          "Description",
+#          "Tag1 Tag2",
+#      ))
+# conn.commit()
 
 # import models
 # from interviews.models import Post
