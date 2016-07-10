@@ -1,8 +1,8 @@
 
 
 $(document).ready(function () {
-    var keywords = ["pure", "公司"];
-    mark_keywords(keywords);
+    // var keywords = ["pure", "公司"];
+    // mark_keywords(keywords);
 
 
 });

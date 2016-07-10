@@ -7,10 +7,20 @@
 
 import psycopg2
 
-class Pipeline1(object):
+
+class CheckDuplication(object):
+    def process_item(self, item, spider):
+        return item
+
+
+class AddTag(object):
+    def process_item(self, item, spider):
+
+        return item
+
+
+class PutIntoDB(object):
     def __init__(self):
-        # db_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        # self.db = sqlite3.connect(db_path + "/db.sqlite3")
         self.conn = psycopg2.connect(database="postgres", user="postgres", host="db", port="5432")
 
     def process_item(self, item, spider):
@@ -34,14 +44,6 @@ class Pipeline1(object):
             item['tag']
         ))
 
-        # cu.execute("insert into interviews_post values("
-        #            "'" + item['title'] + "', '" +
-        #            item['link'] + "', '" +
-        #            item['time'] + "', '" +
-        #            item['source'] + "', '" +
-        #            item['desc'] + "', '" +
-        #            item['tag'] +
-        #            "')")
         self.conn.commit()
         cu.close()
         return item

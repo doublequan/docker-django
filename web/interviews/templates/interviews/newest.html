@@ -88,7 +88,6 @@
         <div class="row">
             <div class="col-xs-12">
                 <p>共为您找到XXX个结果</p>
-
             </div>
         </div>
     </div>
@@ -99,13 +98,13 @@
             {% for item in items %}
             <div class="col-xs-7 content-wrapper">
                 <div class="content">
-                    <a class="content-title" href="{{ item.link }}" target="_blank">{{ item.title }}</a>
+                    <a class="content-title" href="#" target="_blank">{{ item.title }}</a>
                     <p>
-                        <span class="content-time">{{ item.time }} - </span>
-                        <span class="content-desc">{{ item.desc }}</span>
+                        <span class="content-time">{{ item.create_time }} - </span>
+                        <span class="content-desc">{{ item.description|slice:"100" }} ...</span>
                     </p>
                     <div class="content-footer">
-                        <a class="content-source" href="{{ item.source_link }}" target="_blank">{{ item.source }}</a>
+                        <a class="content-source" href="{{ item.link }}" target="_blank">{{ item.source }}</a>
                         &nbsp;&nbsp;&nbsp;
                         <a class="content-source" href="{{ item.link }}" target="_blank">查看原帖</a>
                     </div>

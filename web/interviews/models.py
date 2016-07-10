@@ -22,3 +22,8 @@ class Post(models.Model):
 class Statistic(models.Model):
     total_post_num = models.IntegerField(default=0)
     fuck = models.CharField(max_length=100, default='fuck')
+
+
+class Source(models.Model):
+    source_name = models.CharField(max_length=200)
+    source_link = models.TextField()
