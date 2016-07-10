@@ -13,7 +13,7 @@ class postItem(scrapy.Item):
     # name = scrapy.Field()
     title = scrapy.Field()
     link = scrapy.Field()
-    time = scrapy.Field()
+    create_time = scrapy.Field()
     source = scrapy.Field()
     desc = scrapy.Field()
     tag = scrapy.Field()

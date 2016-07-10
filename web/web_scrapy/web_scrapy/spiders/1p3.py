@@ -61,7 +61,7 @@ class oneP3Spider(scrapy.Spider):
         item = postItem()
         item['title'] = title
         item['link'] = link
-        item['time'] = time
+        item['create_time'] = time
         item['source'] = "1point3acres"
         item['desc'] = desc
         item['tag'] = ""
