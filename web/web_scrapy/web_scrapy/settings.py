@@ -55,9 +55,11 @@ COOKIES_ENABLED = False
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    # 'web_scrapy.middlewares.MyCustomDownloaderMiddleware': 543,
+   'web_scrapy.rotate_useragent.RotateUserAgentMiddleware': 10,
+   'web_scrapy.rotate_useragent.ProxyMiddleware': 300,
    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
-   'web_scrapy.rotate_useragent.RotateUserAgentMiddleware' :10,
-   "web_scrapy.google_cache.GoogleCacheMiddleware":50,
+   # 'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110,
+   "web_scrapy.google_cache.GoogleCacheMiddleware":5,
 }
 
 GOOGLE_CACHE_DOMAINS = {
@@ -98,3 +100,13 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+PROXIES = [
+   {'ip_port': '202.100.167.145:80', 'user_pass': ''},
+   {'ip_port': '59.39.88.190:8080', 'user_pass': ''},
+   {'ip_port': '202.100.167.159:80', 'user_pass': ''},
+   {'ip_port': '218.255.9.114:3128', 'user_pass': ''},
+   {'ip_port': '58.248.137.228:80', 'user_pass': ''},
+   {'ip_port': '121.33.226.167:3128', 'user_pass': ''},
+]

@@ -1,9 +1,9 @@
 # !/usr/bin/python
 # -*-coding:utf-8-*-
-
+import base64
 import random
 from scrapy.contrib.downloadermiddleware.useragent import UserAgentMiddleware
-
+from settings import PROXIES
 
 class RotateUserAgentMiddleware(UserAgentMiddleware):
     """
@@ -12,16 +12,6 @@ class RotateUserAgentMiddleware(UserAgentMiddleware):
         if you set the USER_AGENT_LIST in settings,the rotate with it,if not,then use the default user_agent_list
         attribute instead.TO use this you must set USER_AGET = "".
     """
-
-    PROXIES = [
-        {'ip_port': '202.100.167.145:80', 'user_pass': ''},
-        {'ip_port': '59.39.88.190:8080', 'user_pass': ''},
-        {'ip_port': '202.100.167.159:80', 'user_pass': ''},
-        {'ip_port': '218.255.9.114:3128', 'user_pass': ''},
-        {'ip_port': '58.248.137.228:80', 'user_pass': ''},
-        {'ip_port': '121.33.226.167:3128', 'user_pass': ''},
-    ]
-
 
     # the default user_agent_list composes chrome,I E,firefox,Mozilla,opera,netscape
     # for more user agent strings,you can find it in http://www.useragentstring.com/pages/useragentstring.php
@@ -66,3 +56,17 @@ class RotateUserAgentMiddleware(UserAgentMiddleware):
         ua = self._user_agent(spider)
         if ua:
             request.headers.setdefault('User-Agent', ua)
+
+
+
+class ProxyMiddleware(object):
+    def process_request(self, request, spider):
+        proxy = random.choice(PROXIES)
+        if proxy['user_pass'] is not None:
+            request.meta['proxy'] = "http://%s" % proxy['ip_port']
+            encoded_user_pass = base64.encodestring(proxy['user_pass'])
+            request.headers['Proxy-Authorization'] = 'Basic ' + encoded_user_pass
+            print "**************ProxyMiddleware have pass************" + proxy['ip_port']
+        else:
+            print "**************ProxyMiddleware no pass************" + proxy['ip_port']
+            request.meta['proxy'] = "http://%s" % proxy['ip_port']
