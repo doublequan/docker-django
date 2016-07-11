@@ -15,5 +15,6 @@ class postItem(scrapy.Item):
     link = scrapy.Field()
     create_time = scrapy.Field()
     source = scrapy.Field()
+    source_link = scrapy.Field()
     desc = scrapy.Field()
     tag = scrapy.Field()

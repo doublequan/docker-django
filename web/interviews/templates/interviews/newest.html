@@ -98,13 +98,19 @@
             {% for item in items %}
             <div class="col-xs-7 content-wrapper">
                 <div class="content">
-                    <a class="content-title" href="#" target="_blank">{{ item.title }}</a>
+                    <a name="{{ forloop.counter }}" class="content-title" href="{{ item.link }}" target="_blank">{{ item.title }}</a>
                     <p>
                         <span class="content-time">{{ item.create_time }} - </span>
-                        <span class="content-desc">{{ item.description|slice:"100" }} ...</span>
+                        {% if item.description|length > 200 %}
+                        <span hidden class="content-desc-all">{{ item.description}}</span>
+                        <span class="content-desc-partial">{{ item.description|slice:"200" }} ...</span>
+                        <a title="{{ forloop.counter }}" href="javascript:void(0);" class="toggle-expand" onclick="content_toggle(this)">Show All</a>
+                        {% else %}
+                        <span class="content-desc">{{ item.description }}</span>
+                        {% endif %}
                     </p>
                     <div class="content-footer">
-                        <a class="content-source" href="{{ item.link }}" target="_blank">{{ item.source }}</a>
+                        <a class="content-source" href="{{ item.source_link }}" target="_blank">{{ item.source }}</a>
                         &nbsp;&nbsp;&nbsp;
                         <a class="content-source" href="{{ item.link }}" target="_blank">查看原帖</a>
                     </div>

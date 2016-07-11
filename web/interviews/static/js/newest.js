@@ -2,10 +2,25 @@
 
 $(document).ready(function () {
     // var keywords = ["pure", "公司"];
-    // mark_keywords(keywords);
-
+        // mark_keywords(keywords);
+    // console.log($(".content-desc-all"));
 
 });
+
+function content_toggle(a) {
+    if (a.text == "Show All") {
+        $(a).prevAll(".content-desc-all").show();
+        $(a).prevAll(".content-desc-partial").hide();
+        a.text = "Hide";
+    } else {
+        $(a).prevAll(".content-desc-all").hide();
+        $(a).prevAll(".content-desc-partial").show();
+        a.text = "Show All";
+        window.location.href = ("#" + a.title);
+    }
+
+}
+
 
 function mark_keywords(keywords) {
     if (keywords.length == 0) return;

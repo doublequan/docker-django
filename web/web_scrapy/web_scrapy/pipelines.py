@@ -34,14 +34,15 @@ class PutIntoDB(object):
         # print item['tag']
         cu = self.conn.cursor()
 
-        cu.execute("INSERT INTO interviews_post (title, link, create_time, source, description, tag)"
-                   " VALUES (%s, %s, %s, %s, %s, %s);", (
+        cu.execute("INSERT INTO interviews_post (title, link, create_time, source, description, tag, source_link)"
+                   " VALUES (%s, %s, %s, %s, %s, %s, %s);", (
             item['title'],
             item['link'],
             "'" + item['create_time'] + "'",
             item['source'],
             item['desc'],
-            item['tag']
+            item['tag'],
+            item['source_link']
         ))
 
         self.conn.commit()

@@ -63,6 +63,7 @@ class oneP3Spider(scrapy.Spider):
         item['link'] = link
         item['create_time'] = time
         item['source'] = "1point3acres"
+        item['source_link'] = "http://www.1point3acres.com/bbs/forum-28-1.html"
         item['desc'] = desc
         item['tag'] = ""
         yield item

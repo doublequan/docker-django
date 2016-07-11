@@ -12,6 +12,7 @@ class Post(models.Model):
     link = models.TextField()
     create_time = models.DateTimeField(default=timezone.now)
     source = models.CharField(max_length=200)
+    source_link = models.TextField()
     description = models.TextField()
     tag = models.CharField(max_length=200)
 
@@ -24,6 +25,6 @@ class Statistic(models.Model):
     fuck = models.CharField(max_length=100, default='fuck')
 
 
-class Source(models.Model):
-    source_name = models.CharField(max_length=200)
-    source_link = models.TextField()
+# class Source(models.Model):
+#     source_name = models.CharField(max_length=200)
+#     source_link = models.TextField()
