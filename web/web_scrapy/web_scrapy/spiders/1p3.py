@@ -74,7 +74,7 @@ class oneP3Spider(scrapy.Spider):
 
     def process_desc_from1p3(self, desc_un):
         desc = re.sub(r"(<.*?>)|(\n)", "", desc_un)
-        pattern =  r"(注册一亩三分地论坛，查看更多干货！您需要 登录 才可以下载或查看，没有帐号？获取更多干货,去instant注册!)|" \
+        pattern =  r"(注册一亩三分地论坛，查看更多干货！您需要 登录 才可以下载或查看，没有帐号？获取更多干货,去instant注册!x)|" \
                    r"(. 涓�浜�-涓夊垎-鍦帮紝鐙鍙戝竷)|" \
                    r"(.鐣欏璁哄潧-涓�浜�-涓夊垎鍦�)|" \
                    r"(. Waral 鍗氬鏈夋洿澶氭枃绔�,)|" \

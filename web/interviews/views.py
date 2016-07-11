@@ -30,7 +30,7 @@ def index(request):
 
 def newest(request):
     # items = Post.objects.order_by("create_time")[:10]
-    items = Post.objects.all()[:10]
+    items = Post.objects.all().order_by('-create_time')[:10]
 
     print type(items), len(items)
 
