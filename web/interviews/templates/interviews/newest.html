@@ -87,7 +87,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <p>共为您找到XXX个结果</p>
+                <p>共为您找到{{ result_num }}个结果</p>
             </div>
         </div>
     </div>
@@ -119,7 +119,27 @@
             {% endfor %}
         </div> <!-- / row -->
     </div>
+
+
+<div id="page">
+
+    <a href="#" class="n">&lt;上一页</a>
+
+    <strong>
+        <span class="pc">1</span>
+    </strong>
+
+    <a href="">
+        <span class="pc">2</span>
+    </a>
+
+    <a href="" class="n">下一页&gt;</a>
 </div>
+
+</div>
+
+
+
 </body>
 
 </html>

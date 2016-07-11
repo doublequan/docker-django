@@ -30,7 +30,9 @@ def index(request):
 
 def newest(request):
     # items = Post.objects.order_by("create_time")[:10]
-    items = Post.objects.all().order_by('-create_time')[:10]
+    all_posts = Post.objects.all()
+
+    items = all_posts.order_by('-create_time')[:15]
 
     print type(items), len(items)
 
@@ -47,7 +49,7 @@ def newest(request):
 #     }] * 10
     content = {
         "items": items,
-        "test": "testMsg",
+        "result_num": len(all_posts),
     }
     return render(request, 'interviews/newest.html', content)
 
