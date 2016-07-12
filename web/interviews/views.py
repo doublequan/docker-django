@@ -1,5 +1,5 @@
 # coding: utf-8
-
+from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 
 from models import Post
@@ -28,29 +28,40 @@ def index(request):
     }
     return render(request, 'interviews/index.html', content)
 
-def newest(request):
+
+def search(request, current_page_num):
     # items = Post.objects.order_by("create_time")[:10]
+    result_num_each_page = 10;
     all_posts = Post.objects.all()
+    result_num = len(all_posts)
+    page_num = result_num / result_num_each_page + 1
 
-    items = all_posts.order_by('-create_time')[:15]
+    current_page_num = int(current_page_num)
 
-    print type(items), len(items)
+    if current_page_num > page_num or current_page_num <= 0:
+        raise Http404("No Such Page!")
 
-    # print items[1]['create_time']
+    if page_num <= 10:
+        pages = range(1, page_num + 1)
+    else:
+        start_page = max(1, current_page_num - 4)
+        pages = range(start_page, start_page + 10)
 
-#     items = [{
-#         "title": "有近期pure storage onsite的吗，求联系一起讨论，毕业前找到工作的最后希望之一！",
-#         "link": "http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=154315&extra=page%3D2%26filter%3Dsortid%26sortid%3D192%26sortid%3D192",
-#         "time": "2016-6-28 07:11:25",
-#         "source": "1point3acres",
-#         "source_link": "http://www.1point3acres.com/bbs/forum-28-1.html",
-#         "desc": " 如题，求近期一起有去pure storage onsite的同学吗？求一起讨论学习，加qq552017575。有前辈面过的可以在此帖下留下面筋题目，小弟不甚感激。\
-# 渣渣如我一直跪到现在，也面了很多公司了，一直跪，希望早日找到工作，然后把面过的所有面试都发出造福地里，天天都在攒人品，求offer！",
-#     }] * 10
+    start_id = (current_page_num - 1) * result_num_each_page
+    end_id = start_id + result_num_each_page
+    items = all_posts.order_by('-create_time')[start_id : end_id]
+
+
     content = {
         "items": items,
-        "result_num": len(all_posts),
+        "result_num": result_num,
+        "pages": pages,
+        "page_num": page_num,
+        "current_page_num": current_page_num,
+        "prev_page": current_page_num - 1,
+        "next_page": current_page_num + 1,
     }
-    return render(request, 'interviews/newest.html', content)
+
+    return render(request, 'interviews/search.html', content)
 
 

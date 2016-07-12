@@ -13,11 +13,11 @@
     {% load staticfiles %}
     <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">
     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/newest.css' %}" rel="stylesheet">
+    <link href="{% static 'css/search.css' %}" rel="stylesheet">
 
     <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/newest.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/search.js' %}"></script>
 
 
     <!--[if lt IE 9]>
@@ -123,17 +123,26 @@
 
 <div id="page">
 
-    <a href="#" class="n">&lt;上一页</a>
+    {% if prev_page %}
+    <a href="{% url 'interviews:search' prev_page %}" class="n">&lt;上一页</a>
+    {% endif %}
 
-    <strong>
-        <span class="pc">1</span>
-    </strong>
+    {% for page_id in pages %}
 
-    <a href="">
-        <span class="pc">2</span>
-    </a>
+        {% if page_id == current_page_num %}
+            <strong>
+                <span class="pc">{{ page_id }}</span>
+            </strong>
+        {% else %}
+            <a href="{% url 'interviews:search' page_id %}">
+                <span class="pc">{{ page_id }}</span>
+            </a>
+        {% endif %}
+    {% endfor %}
 
-    <a href="" class="n">下一页&gt;</a>
+    {% if next_page <= page_num  %}
+    <a href="{% url 'interviews:search' next_page %}" class="n">下一页&gt;</a>
+    {% endif %}
 </div>
 
 </div>

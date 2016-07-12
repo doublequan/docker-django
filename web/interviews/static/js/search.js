@@ -16,7 +16,7 @@ function content_toggle(a) {
         $(a).prevAll(".content-desc-all").hide();
         $(a).prevAll(".content-desc-partial").show();
         a.text = "Show All";
-        window.location.href = ("#" + a.title);
+        // window.location.href = ("#" + a.title);
     }
 
 }

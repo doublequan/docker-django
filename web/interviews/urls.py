@@ -4,5 +4,5 @@ from . import views
 app_name = 'interviews'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^newest/$', views.newest, name='newest'),
+    url(r'^search-(?P<current_page_num>[0-9]+)/$', views.search, name='search'),
 ]

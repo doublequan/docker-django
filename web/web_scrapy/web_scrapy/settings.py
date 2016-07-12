@@ -75,8 +75,6 @@ GOOGLE_CACHE_DOMAINS = {
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'web_scrapy.pipelines.CheckDuplication': 300,
-   'web_scrapy.pipelines.AddTag': 500,
    'web_scrapy.pipelines.PutIntoDB': 800,
 }
 
