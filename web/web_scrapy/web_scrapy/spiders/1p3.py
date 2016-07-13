@@ -82,8 +82,6 @@ class oneP3Spider(scrapy.Spider):
 
 
     def check_duplication(self, url):
-        # print("@@@@@@@@@@@@@@", type(url), type(self.link_tuple[0]), "@@@@@@@@@@@@@")
-        # print (self.link_tuple)
         if url in self.link_tuple:
             print "False"
             return False

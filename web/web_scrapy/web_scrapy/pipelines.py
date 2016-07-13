@@ -8,17 +8,6 @@
 import psycopg2
 
 
-# class CheckDuplication(object):
-#     def process_item(self, item, spider):
-#         return item
-#
-#
-# class AddTag(object):
-#     def process_item(self, item, spider):
-#
-#         return item
-
-
 class PutIntoDB(object):
     def __init__(self):
         self.conn = psycopg2.connect(database="postgres", user="postgres", host="db", port="5432")
