@@ -37,10 +37,10 @@ class PutIntoDB(object):
         :param item:
         :return Boolean, true if no duplication in db:
         '''
-        self.query_cu.execute('SELECT * FROM interviews_post WHERE link = "%s"'
+        self.query_cu.execute('SELECT * FROM interviews_post WHERE link = %s'
                               , (item["link"],))
         rst = self.query_cu.fetchall()
-        if rst:
+        if not rst:
             return True
         else:
             return False
