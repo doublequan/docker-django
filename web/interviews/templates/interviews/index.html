@@ -29,39 +29,6 @@
 
 <body>
 
-    <div class="navbar navbar-inverse navbar-extra">
-        <div class="container">
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active" id="home">
-                        <a href=""><font color="orange">Home</font></a>
-                    </li>
-
-                    <li id="newest">
-                        <a href="newest/">Newest</a>
-                    </li>
-
-                    <li id="flag">
-                        <a href="flag/">FLAG</a>
-                    </li>
-                    <!-- TODO: not hard code -->
-                </ul>
-            </div><!--/.navbar-collapse -->
-
-
-
-        </div>
-    </div>
-
     <header class="site-header jumbotron">
         <div class="site-nav">
             <a href="#about">About</a>
@@ -76,7 +43,7 @@
                     <form class="" role="search">
                         <div class="form-group">
                             <input type="text" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree">
-                            <i class="fa fa-search" id="btn-search"></i>
+                            <a class="fa fa-search" id="btn-search"  href="{% url 'interviews:search' 1 %}"></a>
                         </div>
                     </form>
                 </div>

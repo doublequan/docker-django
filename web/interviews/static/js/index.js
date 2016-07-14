@@ -9,7 +9,7 @@ $(document).ready(function () {
     });
 
     $('#btn-search').click(function () {
-        window.location.href="newest/";
+        window.location.href="";
     });
 
 
