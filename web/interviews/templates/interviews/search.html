@@ -95,10 +95,13 @@
 
     <div class="container">
         <div class="row results">
-            {% for item in items %}
+            {% for item, tags in items %}
             <div class="col-xs-7 content-wrapper">
                 <div class="content">
                     <a name="{{ forloop.counter }}" class="content-title" href="{{ item.link }}" target="_blank">{{ item.title }}</a>
+                    {% for tag in tags %}
+                    <span class="result-tag">{{ tag }}</span>
+                    {% endfor %}
                     <p>
                         <span class="content-time">{{ item.create_time }} - </span>
                         {% if item.description|length > 200 %}

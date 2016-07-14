@@ -2,7 +2,7 @@
 
 # Create your tests here.
 
-
-if [1]:
-    print "true"
+list = [[]]
+list += [[2]]
+print list
 

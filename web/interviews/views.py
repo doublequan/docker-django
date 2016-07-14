@@ -49,9 +49,13 @@ def search(request, current_page_num):
 
     start_id = (current_page_num - 1) * result_num_each_page
     end_id = start_id + result_num_each_page
-    items = all_posts.order_by('-create_time')[start_id : end_id]
+    item_list = all_posts.order_by('-create_time')[start_id : end_id]
+    items = []
+    for item in item_list:
+        tags = [n for n in item.tag.split(' ') if n.strip()]
+        items += [[item, tags]]
 
-
+    print items
     content = {
         "items": items,
         "result_num": result_num,

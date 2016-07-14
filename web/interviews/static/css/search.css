@@ -167,3 +167,31 @@ em {
 a:link {
     -webkit-tap-highlight-color: rgba(225,225,225,.5);
 }
+
+.result-tags-wrapper {
+
+}
+
+.result-tag {
+    /*display: inline-block;*/
+    /*max-width: 90px;*/
+    margin-right: 5px;
+    padding: 1px 12px;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    color: #666;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 8px;
+    -webkit-user-select: none;
+    transition: all cubic-bezier(.22,.58,.12,.98) .4s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.result-tag:hover {
+    border-color: #4fc1e9;
+    color: #4fc1e9;
+}
