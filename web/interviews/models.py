@@ -17,7 +17,7 @@ class Post(models.Model):
     tag = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.source + " : " + self.title
+        return self.source + " : " + self.title + " TAG: " + self.tag
 
 
 class Statistic(models.Model):

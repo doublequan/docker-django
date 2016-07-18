@@ -1,4 +1,5 @@
 # coding: utf-8
+from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 
@@ -41,10 +42,17 @@ def search(request, current_page_num):
     result_num_each_page = 10;
 
     # print chardet.detect(request.GET.get('wd'))
-    # print request.GET.get('wd').encode('utf-8')
-    # print chardet.detect(request.GET.get('wd').encode('utf-8'))
+    if request.GET.get('wd') and request.GET.get('wd').encode('utf-8') != "":
+        keyword = request.GET.get('wd').encode('utf-8')
+        print keyword
 
-    all_posts = Post.objects.all()
+        args = (Q(title__icontains=keyword) |
+                Q(description__icontains=keyword) |
+                Q(tag__icontains=keyword),)
+        all_posts = Post.objects.filter(*args)
+    else:
+        all_posts = Post.objects.all()
+    # print chardet.detect(request.GET.get('wd').encode('utf-8'))
 
     result_num = len(all_posts)
     page_num = result_num / result_num_each_page + 1
