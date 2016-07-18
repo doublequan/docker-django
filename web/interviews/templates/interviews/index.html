@@ -40,12 +40,12 @@
                     <p>北美 IT 岗位面试经验搜索<br>
                         <span class="package-amount">已收录了 <strong>{{ total_num }}</strong> 个面经</span>
                     </p>
-                    <form class="" role="search" method="get" action="{% url 'interviews:search' 1%}">
+                    <form id="form-search" role="search" method="get" action="{% url 'interviews:search' 1%}">
                         <div class="form-group">
                             <input type="text" name="wd" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree">
 {#                            <a class="fa fa-search" id="btn-search"  href="{% url 'interviews:search' 1 %}"></a>#}
-{#                            <i class="fa fa-search" id="btn-search"  href="{% url 'interviews:search' 1 %}"></i>#}
-                            <button class="btn btn-link search-btn">Submit</button>
+                            <i class="fa fa-search" id="i-search"></i>
+{#                            <button class="btn btn-link search-btn">Submit</button>#}
                         </div>
                     </form>
                 </div>

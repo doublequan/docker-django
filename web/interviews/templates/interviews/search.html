@@ -34,13 +34,12 @@
     <div class="container search-bar">
         <div class="row">
             <div class="col-xs-7">
-                <form class="" role="search" action="/s" method="GET">
-                    <div class="form-group">
-                        <input type="text" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree">
-{#                        <i type="submit" class="fa fa-search"></i>#}
-                        <input type="submit" class="fa fa-search">
-                    </div>
-                </form>
+                    <form id="form-search" role="search" method="get" action="{% url 'interviews:search' 1%}">
+                        <div class="form-group">
+                            <input type="text" name="wd" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree">
+                            <i class="fa fa-search" id="i-search"></i>
+                        </div>
+                    </form>
             </div>
 
             <div class="col-xs-3">

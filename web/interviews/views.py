@@ -42,6 +42,7 @@ def search(request, current_page_num):
     result_num_each_page = 10;
 
     # print chardet.detect(request.GET.get('wd'))
+    keyword = ""
     if request.GET.get('wd') and request.GET.get('wd').encode('utf-8') != "":
         keyword = request.GET.get('wd').encode('utf-8')
         print keyword
@@ -85,6 +86,7 @@ def search(request, current_page_num):
         "current_page_num": current_page_num,
         "prev_page": current_page_num - 1,
         "next_page": current_page_num + 1,
+        "search_keyword": keyword,
     }
 
     return render(request, 'interviews/search.html', content)
