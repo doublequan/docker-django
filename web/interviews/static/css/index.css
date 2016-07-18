@@ -9,7 +9,8 @@ body {
 .site-header {
     position: relative;
     text-align: center;
-    background-color: #8ea8f8;
+    /*background-color: #8ea8f8;*/
+    background-color: #0767c8;
     color: #fff;
     margin-bottom: 0;
 }
@@ -70,7 +71,7 @@ body {
     position: absolute;
     right: 25px;
     top: 15px;
-    color: #b9def0;
+    color: #0767c8;
     font-size: 24px;
 }
 

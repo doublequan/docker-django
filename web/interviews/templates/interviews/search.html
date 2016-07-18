@@ -29,17 +29,54 @@
 
 <body>
 
+<div class="navbar navbar-inverse navbar-fixed-top">
+   <div class="container">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand hidden-xs" href="#">Search</a>
+         <a class="navbar-brand visible-xs" href="#">Search</a>
+{#         <form class="navbar-form pull-left" role="search">#}
+{#            <div class="input-group">#}
+{#               <input type="text" class="form-control" placeholder="Search">#}
+{#               <div class="input-group-btn">#}
+{#                  <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>#}
+{#               </div>#}
+{#            </div>#}
+{#         </form>#}
+         <form id="form-search" class="navbar-form pull-left" role="search" method="get" action="{% url 'interviews:search' 1%}">
+           <div class="form-group">
+             <input type="text" name="wd" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree" value="{{ search_keyword }}">
+             <i class="fa fa-search" id="i-search"></i>
+           </div>
+         </form>
+      </div>
+{#      <div class="navbar-collapse collapse">#}
+{#         <ul class="nav navbar-nav navbar-right">#}
+{#            <li class="active"><a href="#">Home</a></li>#}
+{#            <li><a href="#about">Browse Courses</a></li>#}
+{#            <li><a href="#contact">Active Courses</a></li>#}
+{#         </ul>#}
+{#      </div>#}
+      <!--/.navbar-collapse -->
+   </div>
+</div>
+
+
 <div id="wrapper">
 <!--<header class="site-header">-->
     <div class="container search-bar">
         <div class="row">
             <div class="col-xs-7">
-                    <form id="form-search" role="search" method="get" action="{% url 'interviews:search' 1%}">
-                        <div class="form-group">
-                            <input type="text" name="wd" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree" value="{{ search_keyword }}">
-                            <i class="fa fa-search" id="i-search"></i>
-                        </div>
-                    </form>
+{#                    <form id="form-search" role="search" method="get" action="{% url 'interviews:search' 1%}">#}
+{#                        <div class="form-group">#}
+{#                            <input type="text" name="wd" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree" value="{{ search_keyword }}">#}
+{#                            <i class="fa fa-search" id="i-search"></i>#}
+{#                        </div>#}
+{#                    </form>#}
             </div>
 
             <div class="col-xs-3">
