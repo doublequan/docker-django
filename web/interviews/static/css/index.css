@@ -55,6 +55,17 @@ body {
     text-align: center;
 }
 
+.search-btn {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    color: #aaa;
+    border-radius: 3px;
+    font-size: 21px;
+    padding: 5px 10px 1px;
+    @include transition(all 200ms ease-in-out);
+}
+
 .site-header .fa {
     position: absolute;
     right: 25px;

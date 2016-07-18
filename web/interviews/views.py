@@ -3,13 +3,12 @@ from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 
 from models import Post
-
+import chardet
 # Create your views here.
 
 
 
 def index(request):
-    boards = ["Facebook", "LinkedIn", "Amazon", "Google", "Uber", "Airbnb"]
     example = {
         "2016-Jun-07 新鲜OA题目 截",
         "国内30岁，想去美国硅谷工作或者申请CS PHD",
@@ -21,6 +20,14 @@ def index(request):
         "M家onsite吐槽下",
         "FB phone要求bug free？",
     }
+
+    boards = [("Facebook", example),
+              ("LinkedIn", example),
+              ("Amazon", example),
+              ("Google", example),
+              ("Uber", example),
+              ("Airbnb", example)]
+
     content = {
         "total_num": 0,
         "boards": boards,
@@ -32,7 +39,13 @@ def index(request):
 def search(request, current_page_num):
     # items = Post.objects.order_by("create_time")[:10]
     result_num_each_page = 10;
+
+    # print chardet.detect(request.GET.get('wd'))
+    # print request.GET.get('wd').encode('utf-8')
+    # print chardet.detect(request.GET.get('wd').encode('utf-8'))
+
     all_posts = Post.objects.all()
+
     result_num = len(all_posts)
     page_num = result_num / result_num_each_page + 1
 

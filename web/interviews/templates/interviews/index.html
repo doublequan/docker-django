@@ -38,12 +38,14 @@
                 <div class="col-xs-12">
                     <h1>面 经 搜 索</h1>
                     <p>北美 IT 岗位面试经验搜索<br>
-                        <span class="package-amount">已收录了 <strong>{{ total_num }}</strong> 个一手面经</span>
+                        <span class="package-amount">已收录了 <strong>{{ total_num }}</strong> 个面经</span>
                     </p>
-                    <form class="" role="search">
+                    <form class="" role="search" method="get" action="{% url 'interviews:search' 1%}">
                         <div class="form-group">
-                            <input type="text" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree">
-                            <a class="fa fa-search" id="btn-search"  href="{% url 'interviews:search' 1 %}"></a>
+                            <input type="text" name="wd" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree">
+{#                            <a class="fa fa-search" id="btn-search"  href="{% url 'interviews:search' 1 %}"></a>#}
+{#                            <i class="fa fa-search" id="btn-search"  href="{% url 'interviews:search' 1 %}"></i>#}
+                            <button class="btn btn-link search-btn">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -70,17 +72,17 @@
 
             </div>
 
-            {% for board in boards %}
+            {% for board_name, board_content in boards %}
             <div class="board col-xs-12 col-md-6 col-lg-3">
                 <div class="board-header">
-                    <span>{{ board }}</span>
+                    <span>{{ board_name }}</span>
                     <a href="#">More</a>
                 </div>
 
                 <div class="board-content">
-                    {% for row in example %}
+                    {% for row in board_content %}
                     <div>
-                        <a href="#">{{ row }}</a>
+                        <a href="">{{ row }}</a>
                     </div>
                     {% endfor %}
                 </div>
