@@ -37,8 +37,8 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
          </button>
-         <a class="navbar-brand hidden-xs" href="#">Se</a>
-         <a class="navbar-brand visible-xs" href="#">S</a>
+         <a class="navbar-brand hidden-xs" href="#">面经</a>
+{#         <a class="navbar-brand visible-xs" href="#">面经</a>#}
 {#         <form class="navbar-form pull-left" role="search">#}
 {#            <div class="input-group">#}
 {#               <input type="text" class="form-control" placeholder="Search">#}
@@ -70,7 +70,7 @@
 <!--<header class="site-header">-->
     <div class="container search-bar">
         <div class="row">
-            <div class="col-xs-7">
+            <div class="col-xs-12 col-md-7">
 {#                    <form id="form-search" role="search" method="get" action="{% url 'interviews:search' 1%}">#}
 {#                        <div class="form-group">#}
 {#                            <input type="text" name="wd" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree" value="{{ search_keyword }}">#}
@@ -79,7 +79,7 @@
 {#                    </form>#}
             </div>
 
-            <div class="col-xs-3">
+{#            <div class="col-xs-3">#}
                 <!--<div class="form-group">-->
                     <!--<select class="form-control">-->
                         <!--<option>Choose one filter</option>-->
@@ -90,7 +90,7 @@
                         <!--<option>Others</option>-->
                     <!--</select>-->
                 <!--</div>-->
-            </div>
+{#            </div>#}
         </div>
         <div class="row">
             <div class="col-xs-12">
@@ -103,7 +103,7 @@
     <div class="container">
         <div class="row results">
             {% for item, tags in items %}
-            <div class="col-xs-7 content-wrapper">
+            <div class="col-xs-12 col-md-7 content-wrapper">
                 <div class="content">
                     <a name="{{ forloop.counter }}" class="content-title" href="{{ item.link }}" target="_blank">{{ item.title }}</a>
                     {% for tag in tags %}
