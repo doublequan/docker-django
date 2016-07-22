@@ -38,14 +38,6 @@ body {
 
 #form-search .search{
     width: 500px;
-    /*border: 2px solid #EEEEEE;*/
-    /*-webkit-box-shadow: none;*/
-    /*box-shadow: none;*/
-    /*font-size: 16px;*/
-    /*padding: 13px 30px;*/
-    /*border-radius: 0;*/
-    /*height: auto;*/
-    /*text-align: center;*/
 }
 
 #form-search .fa {
@@ -213,16 +205,24 @@ a:link {
 }
 
 
-@media(max-width:767px) {
+/*@media(max-width:767px) {*/
+@media(max-width:600px) {
     .navbar .navbar-form {
-        width: 185px;
-        padding-left:0;
-        padding-right:0;
+        width: 350px;
+        /*padding-left:0;*/
+        /*padding-right:0;*/
+    }
+
+    #form-search .search{
+        width: 350px;
     }
 }
 @media(min-width:768px) {
     .navbar .navbar-form {
         width: 250px;
+    }
+    #form-search .search{
+        width: 500px;
     }
 }
 .navbar .navbar-form {

@@ -122,6 +122,18 @@ body {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    position: relative;
+}
+
+.board-content div .board-content-title{
+    max-width: 80%;
+}
+
+.board-content div .board-content-time {
+    position: absolute;
+    right: 5px;
+
+    color: #777;
 }
 
 .footer-about {

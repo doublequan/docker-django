@@ -2,7 +2,8 @@
 
 # Create your tests here.
 
-list = [[]]
-list += [[2]]
-print list
+list = [1,2,3,4,5,6]
+for i in list:
+    list2 = []
+print list2
 

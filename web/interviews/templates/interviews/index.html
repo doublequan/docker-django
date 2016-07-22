@@ -42,7 +42,7 @@
                     </p>
                     <form id="form-search" role="search" method="get" action="{% url 'interviews:search' 1%}">
                         <div class="form-group">
-                            <input type="text" name="wd" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree">
+                            <input type="text" name="wd" class="form-control search clearable" placeholder="{{ tips }}">
                             <i class="fa fa-search" id="i-search"></i>
                         </div>
                     </form>
@@ -57,13 +57,14 @@
             <div class="board col-xs-12 col-md-12 col-lg-6">
                 <div class="board-header">
                     <span>最新面经</span>
-                    <a href="#">More</a>
+                    <a href="{% url 'interviews:search' 1%}">More</a>
                 </div>
 
                 <div class="board-content">
-                    {% for row in example %}
+                    {% for model, time in content_newest %}
                     <div>
-                        <a href="#">{{ row }}</a>
+                        <span class="board-content-time">{{ time }}</span>
+                        <div class="board-content-title"><a href="{{ model.link }}">{{ model.title }}</a></div>
                     </div>
                     {% endfor %}
                 </div>
@@ -74,13 +75,14 @@
             <div class="board col-xs-12 col-md-6 col-lg-3">
                 <div class="board-header">
                     <span>{{ board_name }}</span>
-                    <a href="#">More</a>
+                    <a href="">More</a>
                 </div>
 
                 <div class="board-content">
-                    {% for row in board_content %}
+                    {% for model, time in board_content %}
                     <div>
-                        <a href="">{{ row }}</a>
+                        <span class="board-content-time">{{ time }}</span>
+                        <div class="board-content-title"><a href="{{ model.link }}">{{ model.title }}</a></div>
                     </div>
                     {% endfor %}
                 </div>
