@@ -206,7 +206,18 @@ a:link {
 
 
 /*@media(max-width:767px) {*/
-@media(max-width:600px) {
+
+@media (max-width: 450px){
+    .navbar .container .navbar-brand {
+        display: none;
+    }
+
+    /*#form-search .search{*/
+        /*width: 200px;*/
+    /*}*/
+}
+
+@media(max-width:630px) {
     .navbar .navbar-form {
         width: 350px;
         /*padding-left:0;*/
@@ -222,7 +233,7 @@ a:link {
         width: 250px;
     }
     #form-search .search{
-        width: 500px;
+        /*width: 450px;*/
     }
 }
 .navbar .navbar-form {
@@ -248,4 +259,10 @@ a:link {
     color: #ffffff;
     font-size: 30px;
 }
+
+.container .navbar-header {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 

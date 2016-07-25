@@ -69,29 +69,7 @@
 <div id="wrapper">
 <!--<header class="site-header">-->
     <div class="container search-bar">
-        <div class="row">
-            <div class="col-xs-12 col-md-7">
-{#                    <form id="form-search" role="search" method="get" action="{% url 'interviews:search' 1%}">#}
-{#                        <div class="form-group">#}
-{#                            <input type="text" name="wd" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree" value="{{ search_keyword }}">#}
-{#                            <i class="fa fa-search" id="i-search"></i>#}
-{#                        </div>#}
-{#                    </form>#}
-            </div>
 
-{#            <div class="col-xs-3">#}
-                <!--<div class="form-group">-->
-                    <!--<select class="form-control">-->
-                        <!--<option>Choose one filter</option>-->
-                        <!--<option>Facebook</option>-->
-                        <!--<option>Linkedin</option>-->
-                        <!--<option>Amazon</option>-->
-                        <!--<option>Google</option>-->
-                        <!--<option>Others</option>-->
-                    <!--</select>-->
-                <!--</div>-->
-{#            </div>#}
-        </div>
         <div class="row">
             <div class="col-xs-12">
                 <p>共为您找到{{ result_num }}个结果</p>
@@ -103,7 +81,7 @@
     <div class="container">
         <div class="row results">
             {% for item, tags in items %}
-            <div class="col-xs-12 col-md-7 content-wrapper">
+            <div class="col-xs-10 col-md-7 content-wrapper">
                 <div class="content">
                     <a name="{{ forloop.counter }}" class="content-title" href="{{ item.link }}" target="_blank">{{ item.title }}</a>
                     {% for tag in tags %}
