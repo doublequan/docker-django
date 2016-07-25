@@ -11,7 +11,7 @@ services:
     # build:
       # context: .
       # dockerfile: web_dockerfile
-    image: billdqu/web_django:0.5
+    image: billdqu/web_django
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./web:/code
