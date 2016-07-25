@@ -1,7 +1,7 @@
 version: '2'
 services:
   db:
-    image: billdqu/postgres
+    image: billdqu/postgresql
     # volumes:
     #   - ./postgresql:/var/lib/postgresql
     # ports:
