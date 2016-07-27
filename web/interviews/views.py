@@ -18,10 +18,10 @@ def index(request):
                       for models in content_newest_models]
 
 
-    board_names = ("Facebook",
-                   "LinkedIn",
+    board_names = ("Google",
                    "Amazon",
-                   "Google",
+                   "Facebook",
+                   "Linkedin",
                    "Uber",
                    "Microsoft",
                    # "Airbnb",
@@ -98,7 +98,7 @@ def search(request, current_page_num):
         tags = [n for n in item.tag.split(' ') if n.strip()]
         items += [[item, tags]]
 
-    print items
+    # print items
     content = {
         "items": items,
         "result_num": result_num,

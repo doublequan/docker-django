@@ -5,6 +5,7 @@ $(document).ready(function () {
     
     $('#form-search').submit(function () {
         var wd = $('#form-search .form-control').val();
+        // $('#form-search .form-control').val(encodeURI(wd));
         return wd != "";
     });
 
@@ -16,10 +17,14 @@ $(document).ready(function () {
 });
 
 function httpGet(theUrl, wd) {
-    console.log(theUrl);
-    console.log(wd);
+
+    wd = encodeURI(wd);
+    // var url = window.location.href;     // Returns full URL
+
     var p = {
         wd: wd
     }
-    console.log($.param(p));
+    var target = theUrl + "?" + $.param(p)
+
+    window.location.href = target;
 }
