@@ -5,6 +5,7 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
+from settings import TAGS
 import psycopg2
 
 
@@ -40,7 +41,24 @@ class PutIntoDB(object):
         :param item:
         :return:
         '''
-        pass
+        tags = {}
+        for (key, values) in TAGS.items():
+            count_title = 0
+            count_desc = 0
+            for v in values:
+                count_title += item['title'].lower().count(v)
+                count_desc += item['desc'].lower().count(v)
+            score = count_title * 10 + count_desc * 2
+            if score > 0:
+                tags[key] = score
+        tags_sorted = sorted(tags.iteritems(), key=lambda d: d[1], reverse=True)
+        # print tags
+        tag_str = ""
+        for tag_tuple in tags_sorted:
+            tag_str += tag_tuple[0] + " "
+
+        item['tag'] = tag_str
+
 
     def put_into_db(self, item):
         '''

@@ -24,7 +24,7 @@ def index(request):
                    "Google",
                    "Uber",
                    "Microsoft",
-                   "Airbnb",
+                   # "Airbnb",
                    "Onsite",
                    "Intern")
 
@@ -45,8 +45,8 @@ def index(request):
     #           ("Airbnb", example)]
 
     tips = ("搜索关键词，例如：Google",
-            "随机Tips1",
-            "随机Tips2",)
+            "空格隔开关键词,例如:Amazon onsite",
+            )
 
 
     content = {

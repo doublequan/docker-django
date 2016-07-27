@@ -108,3 +108,21 @@ PROXIES = [
    {'ip_port': '58.248.137.228:80', 'user_pass': ''},
    {'ip_port': '121.33.226.167:3128', 'user_pass': ''},
 ]
+
+# All the contents will be in lowercase
+TAGS = {
+    # Companies
+    'Google': ('google', 'googl', 'g家', '谷歌'),
+    'Amazon': ('amazon', 'a家', '亚麻', '亚马逊', '亚玛逊'),
+    'LinkedIn': ('linkedin', 'linkin', 'l家', '领英'),
+    'Facebook': ('fb', 'facebook', '脸书', 'f家'),
+    'Microsoft': ('microsoft', 'm家', '微软'),
+    'Airbnb': ('airbnb',),
+    'Uber': ('uber', '优步'),
+
+    # Other Keywords
+    'Onsite': ('onsite',),
+    'Resume': ('resume', '简历'),
+    'OA': ('oa', '在线测试'),
+    'Intern': ('intern', 'internship', '实习'),
+}

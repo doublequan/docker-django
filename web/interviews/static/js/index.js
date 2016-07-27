@@ -11,8 +11,15 @@ $(document).ready(function () {
     $('#i-search').click(function () {
         $('#form-search').submit();
     });
-
-
-
+    
 
 });
+
+function httpGet(theUrl, wd) {
+    console.log(theUrl);
+    console.log(wd);
+    var p = {
+        wd: wd
+    }
+    console.log($.param(p));
+}

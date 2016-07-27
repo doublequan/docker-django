@@ -1,7 +1,9 @@
 # coding: utf-8
+from settings import TAGS
 import psycopg2
 import sys
 import chardet
+
 
 conn = psycopg2.connect(database="postgres", user="postgres", host="db", port="5432")
 query_cu = conn.cursor()
@@ -15,23 +17,7 @@ if CLEAN:
     # conn.close()
     # sys.exit("Clean Completed")
 
-# All the contents will be in lowercase
-TAGS = {
-    # Companies
-    'Google': ('google', 'googl', 'g家', '谷歌'),
-    'Amazon': ('amazon', 'a家', '亚麻', '亚马逊', '亚玛逊'),
-    'LinkedIn': ('linkedin', 'linkin', 'l家', '领英'),
-    'Facebook': ('fb', 'facebook', '脸书', 'f家'),
-    'Microsoft': ('microsoft', 'm家', '微软'),
-    'Airbnb': ('airbnb',),
-    'Uber': ('uber', '优步'),
 
-    # Other Keywords
-    'Onsite': ('onsite',),
-    'Resume': ('resume', '简历'),
-    'OA': ('oa', '在线测试'),
-    'Intern': ('intern', 'internship', '实习'),
-}
 
 query_cu.execute('SELECT link, title, description FROM interviews_post')
 tuple_list = query_cu.fetchall()
