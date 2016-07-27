@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90e5c599-acf1-45cf-a349-49873ee9796b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/interviews/static/js/index.js" afterPath="$PROJECT_DIR$/web/interviews/static/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/interviews/templates/interviews/index.html" afterPath="$PROJECT_DIR$/web/interviews/templates/interviews/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/interviews/static/js/search.js" afterPath="$PROJECT_DIR$/web/interviews/static/js/search.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/interviews/views.py" afterPath="$PROJECT_DIR$/web/interviews/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/web_django/settings.py" afterPath="$PROJECT_DIR$/web/web_django/settings.py" />
     </list>
     <ignored path="django.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,8 +43,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/interviews/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+            <state relative-caret-position="308">
+              <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -93,21 +90,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/interviews/templates/interviews/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
+            <state relative-caret-position="-8">
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="search.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/interviews/static/js/search.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="66">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -182,7 +179,6 @@
         <option value="$PROJECT_DIR$/web/interviews/static/js/newest.js" />
         <option value="$PROJECT_DIR$/web/web_scrapy/web_scrapy/spiders/1p3.py" />
         <option value="$PROJECT_DIR$/web/interviews/models.py" />
-        <option value="$PROJECT_DIR$/web/interviews/static/js/search.js" />
         <option value="$PROJECT_DIR$/web/interviews/urls.py" />
         <option value="$PROJECT_DIR$/web/interviews/tests.py" />
         <option value="$PROJECT_DIR$/web/interviews/static/css/index.css" />
@@ -193,8 +189,9 @@
         <option value="$PROJECT_DIR$/web/web_scrapy/web_scrapy/pipelines.py" />
         <option value="$PROJECT_DIR$/web/web_django/settings.py" />
         <option value="$PROJECT_DIR$/web/interviews/static/js/index.js" />
-        <option value="$PROJECT_DIR$/web/interviews/views.py" />
         <option value="$PROJECT_DIR$/web/interviews/templates/interviews/index.html" />
+        <option value="$PROJECT_DIR$/web/interviews/views.py" />
+        <option value="$PROJECT_DIR$/web/interviews/static/js/search.js" />
       </list>
     </option>
   </component>
@@ -1216,14 +1213,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/interviews/static/js/search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/web_django/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1248,14 +1237,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/interviews/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/interviews/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1274,8 +1255,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/interviews/templates/interviews/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
+        <state relative-caret-position="-8">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/interviews/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/interviews/static/js/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>

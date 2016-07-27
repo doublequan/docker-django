@@ -66,7 +66,10 @@ def search(request, current_page_num):
     keyword = ""
     if request.GET.get('wd') and request.GET.get('wd').encode('utf-8') != "":
         keyword = request.GET.get('wd').encode('utf-8')
-        print keyword
+        wds = keyword.split(" ")
+        wds = filter(None, wds)
+        print wds
+        # Sort Algorithm
 
         args = (Q(title__icontains=keyword) |
                 Q(description__icontains=keyword) |
