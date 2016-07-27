@@ -8,7 +8,9 @@ import chardet
 import random
 # Create your views here.
 
-
+tips = ("搜索关键词，例如：Google",
+        "空格隔开关键词,例如:Amazon onsite",
+        )
 
 def index(request):
     all_posts = Post.objects.all()
@@ -44,11 +46,6 @@ def index(request):
     #           ("Uber", example),
     #           ("Airbnb", example)]
 
-    tips = ("搜索关键词，例如：Google",
-            "空格隔开关键词,例如:Amazon onsite",
-            )
-
-
     content = {
         "total_num": len(all_posts),
         "content_newest": content_newest,
@@ -69,7 +66,12 @@ def search(request, current_page_num):
         wds = keyword.split(" ")
         wds = filter(None, wds)
         print wds
-        # Sort Algorithm
+        # Sorting Algorithm
+
+
+
+
+        # End of Sorting
 
         args = (Q(title__icontains=keyword) |
                 Q(description__icontains=keyword) |
@@ -111,6 +113,7 @@ def search(request, current_page_num):
         "prev_page": current_page_num - 1,
         "next_page": current_page_num + 1,
         "search_keyword": keyword,
+        "tips": random.choice(tips),
     }
 
     return render(request, 'interviews/search.html', content)

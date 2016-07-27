@@ -8,6 +8,15 @@ $(document).ready(function () {
 
 });
 
+function searchByWd(wd) {
+
+    // console.log($('.form-control').val());
+    $('.form-control').val(wd);
+    $('#form-search').submit();
+
+}
+
+
 function content_toggle(a) {
     if (a.text == "Show All") {
         $(a).prevAll(".content-desc-all").show();

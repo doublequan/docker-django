@@ -49,7 +49,7 @@
 {#         </form>#}
          <form id="form-search" class="navbar-form pull-left" role="search" method="get" action="{% url 'interviews:search' 1%}">
            <div class="form-group">
-             <input type="text" name="wd" class="form-control search clearable" placeholder="搜索关键词，例如：Google Tree" value="{{ search_keyword }}">
+             <input type="text" name="wd" class="form-control search clearable" placeholder="{{ tips }}" value="{{ search_keyword }}">
              <i class="fa fa-search" id="i-search"></i>
            </div>
          </form>
@@ -85,7 +85,7 @@
                 <div class="content">
                     <a name="{{ forloop.counter }}" class="content-title" href="{{ item.link }}" target="_blank">{{ item.title }}</a>
                     {% for tag in tags %}
-                    <span class="result-tag">{{ tag }}</span>
+                    <span class="result-tag" onclick="javascript:searchByWd('{{ tag }}')">{{ tag }}</span>
                     {% endfor %}
                     <p>
                         <span class="content-time">{{ item.create_time }} - </span>
