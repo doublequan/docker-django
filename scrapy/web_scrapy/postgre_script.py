@@ -7,7 +7,7 @@ from scrapy.utils.log import configure_logging
 import psycopg2
 
 
-conn = psycopg2.connect(database="postgres", user="postgres", host="localhost", port="5432")
+conn = psycopg2.connect(database="postgres", user="postgres", host="0.0.0.0", port="5432")
 cu = conn.cursor()
 
 # cu.execute("SELECT * FROM interviews_post where source = %s ", ("1p4",))

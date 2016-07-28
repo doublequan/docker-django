@@ -2,7 +2,7 @@ version: '2'
 
 volumes:
   data:
-    external: true
+    external: true  
 
 services:
   db:

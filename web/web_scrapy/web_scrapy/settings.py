@@ -101,12 +101,12 @@ ITEM_PIPELINES = {
 
 
 PROXIES = [
-   {'ip_port': '202.100.167.145:80', 'user_pass': ''},
-   {'ip_port': '59.39.88.190:8080', 'user_pass': ''},
-   {'ip_port': '202.100.167.159:80', 'user_pass': ''},
-   {'ip_port': '218.255.9.114:3128', 'user_pass': ''},
-   {'ip_port': '58.248.137.228:80', 'user_pass': ''},
-   {'ip_port': '121.33.226.167:3128', 'user_pass': ''},
+   {'ip_port': '1.207.167.69:8998', 'user_pass': ''},
+   {'ip_port': '110.72.17.204:8123', 'user_pass': ''},
+   {'ip_port': '122.96.59.106:843', 'user_pass': ''},
+   {'ip_port': '163.142.168.213:8080', 'user_pass': ''},
+   {'ip_port': '111.155.116.223:8123', 'user_pass': ''},
+   {'ip_port': '120.90.6.92:8080', 'user_pass': ''},
 ]
 
 # All the contents will be in lowercase
