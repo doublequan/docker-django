@@ -60,6 +60,9 @@ class RotateUserAgentMiddleware(UserAgentMiddleware):
 
 
 class ProxyMiddleware(object):
+    def __init__(self):
+        pass
+
     def process_request(self, request, spider):
         proxy = random.choice(PROXIES)
         if proxy['user_pass'] is not None:
