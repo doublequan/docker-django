@@ -19,8 +19,7 @@ NEWSPIDER_MODULE = 'web_scrapy.spiders'
 #USER_AGENT = 'web_scrapy (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-# ROBOTSTXT_OBEY = True
-ROBOTSTXT_OBEY = False
+ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -28,13 +27,13 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 1
+#DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-COOKIES_ENABLED = False
+#COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -53,18 +52,9 @@ COOKIES_ENABLED = False
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-   # 'web_scrapy.middlewares.MyCustomDownloaderMiddleware': 543,
-   'web_scrapy.rotate_useragent.RotateUserAgentMiddleware': 10,
-   'web_scrapy.rotate_useragent.ProxyMiddleware': 300,
-   'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
-   # 'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110,
-   "web_scrapy.google_cache.GoogleCacheMiddleware":5,
-}
-
-GOOGLE_CACHE_DOMAINS = {
-   'www.1point3acres.com/bbs/',
-}
+#DOWNLOADER_MIDDLEWARES = {
+#    'web_scrapy.middlewares.MyCustomDownloaderMiddleware': 543,
+#}
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
@@ -75,7 +65,7 @@ GOOGLE_CACHE_DOMAINS = {
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'web_scrapy.pipelines.PutIntoDB': 800,
+   'web_scrapy.pipelines.Pipeline1': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -98,31 +88,3 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-
-
-PROXIES = [
-   {'ip_port': '202.100.167.145:80', 'user_pass': ''},
-   {'ip_port': '59.39.88.190:8080', 'user_pass': ''},
-   {'ip_port': '202.100.167.159:80', 'user_pass': ''},
-   {'ip_port': '218.255.9.114:3128', 'user_pass': ''},
-   {'ip_port': '58.248.137.228:80', 'user_pass': ''},
-   {'ip_port': '121.33.226.167:3128', 'user_pass': ''},
-]
-
-# All the contents will be in lowercase
-TAGS = {
-    # Companies
-    'Google': ('google', 'googl', 'g家', '谷歌'),
-    'Amazon': ('amazon', 'a家', '亚麻', '亚马逊', '亚玛逊'),
-    'LinkedIn': ('linkedin', 'linkin', 'l家', '领英'),
-    'Facebook': ('fb', 'facebook', '脸书', 'f家'),
-    'Microsoft': ('microsoft', 'm家', '微软'),
-    'Airbnb': ('airbnb',),
-    'Uber': ('uber', '优步'),
-
-    # Other Keywords
-    'Onsite': ('onsite',),
-    'Resume': ('resume', '简历'),
-    'OA': ('oa', '在线测试'),
-    'Intern': ('intern', 'internship', '实习'),
-}

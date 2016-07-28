@@ -1,12 +1,17 @@
 version: '2'
+
+volumes:
+  data:
+    external: true
+
 services:
   db:
-    image: billdqu/postgresql
-    # volumes:
-    #   - ./postgresql:/var/lib/postgresql
-    # ports:
-    #   - "5432:5432"
-    container_name: db_postgresql_container
+    image: postgres
+    volumes:  
+      - data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    container_name: db_postgresql
   web:
     # build:
       # context: .
@@ -22,7 +27,7 @@ services:
     container_name: web_django_container
   # scrapy:
   #   build:
-  #     context: .
+  #     # context: .
   #     dockerfile: scrapy_dockerfile
   #   command: /bin/bash
   #   volumes:

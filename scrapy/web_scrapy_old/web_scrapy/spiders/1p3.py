@@ -7,7 +7,6 @@ import re
 parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parentdir)
 from items import postItem
-import psycopg2
 
 class oneP3Spider(scrapy.Spider):
     name = "1p3"
@@ -20,15 +19,8 @@ class oneP3Spider(scrapy.Spider):
     ]
 
     def __init__(self):
-        conn = psycopg2.connect(database="postgres", user="postgres", host="db", port="5432")
-        query_cu = conn.cursor()
-        query_cu.execute('SELECT link FROM interviews_post')
-        tuple_list = query_cu.fetchall()
-        self.link_tuple = ()
-        for t in tuple_list:
-            self.link_tuple += t
-        query_cu.close()
-        conn.close()
+        db_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        self.db = sqlite3.connect(db_path + "/db.sqlite3")
 
 
     def parse(self, response):
@@ -45,7 +37,8 @@ class oneP3Spider(scrapy.Spider):
 
         for a in a_list:
             a_href = a.encode("utf-8")
-            if self.check_duplication(a_href):
+            if self.is_new(a_href):
+
                 # print "Yielding New Request :" + a_href
                 yield scrapy.Request(a_href, callback=self.parse_page)
 
@@ -70,26 +63,22 @@ class oneP3Spider(scrapy.Spider):
 
         desc = self.process_desc_from1p3(desc_unprocess)
 
-        item = postItem()
+        item = IEItem()
         item['title'] = title
         item['link'] = link
-        item['create_time'] = time
+        item['time'] = time
         item['source'] = "1point3acres"
-        item['source_link'] = "http://www.1point3acres.com/bbs/forum-28-1.html"
         item['desc'] = desc
         item['tag'] = ""
         yield item
 
 
-    def check_duplication(self, url):
-        if url in self.link_tuple:
-            return False
-        else:
-            return True
+    def is_new(self, url):
+        return True
 
     def process_desc_from1p3(self, desc_un):
         desc = re.sub(r"(<.*?>)|(\n)", "", desc_un)
-        pattern =  r"(注册一亩三分地论坛，查看更多干货！您需要 登录 才可以下载或查看，没有帐号？获取更多干货,去instant注册! x)|" \
+        pattern =  r"(注册一亩三分地论坛，查看更多干货！您需要 登录 才可以下载或查看，没有帐号？获取更多干货,去instant注册!)|" \
                    r"(. 涓�浜�-涓夊垎-鍦帮紝鐙鍙戝竷)|" \
                    r"(.鐣欏璁哄潧-涓�浜�-涓夊垎鍦�)|" \
                    r"(. Waral 鍗氬鏈夋洿澶氭枃绔�,)|" \
