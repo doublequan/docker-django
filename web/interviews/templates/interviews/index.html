@@ -64,7 +64,9 @@
                     {% for model, time in content_newest %}
                     <div>
                         <span class="board-content-time">{{ time }}</span>
-                        <div class="board-content-title"><a href="{{ model.link }}">{{ model.title }}</a></div>
+                        <div class="board-content-title">
+                            <a href="{{ model.link }}" target="_blank">{{ model.title }}</a>
+                        </div>
                     </div>
                     {% endfor %}
                 </div>
@@ -82,7 +84,9 @@
                     {% for model, time in board_content %}
                     <div>
                         <span class="board-content-time">{{ time }}</span>
-                        <div class="board-content-title"><a href="{{ model.link }}">{{ model.title }}</a></div>
+                        <div class="board-content-title">
+                            <a href="{{ model.link }}" target="_blank">{{ model.title }}</a>
+                        </div>
                     </div>
                     {% endfor %}
                 </div>

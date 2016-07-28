@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="90e5c599-acf1-45cf-a349-49873ee9796b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scrapy/web_scrapy/postgre_script.py" afterPath="$PROJECT_DIR$/scrapy/web_scrapy/postgre_script.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scrapy/web_scrapy/web_scrapy/items.py" afterPath="$PROJECT_DIR$/scrapy/web_scrapy/web_scrapy/items.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scrapy/web_scrapy/web_scrapy/pipelines.py" afterPath="$PROJECT_DIR$/scrapy/web_scrapy/web_scrapy/pipelines.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scrapy/web_scrapy/web_scrapy/settings.py" afterPath="$PROJECT_DIR$/scrapy/web_scrapy/web_scrapy/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scrapy/web_scrapy/web_scrapy/spiders/1p3.py" afterPath="$PROJECT_DIR$/scrapy/web_scrapy/web_scrapy/spiders/1p3.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/interviews/templates/interviews/search.html" afterPath="$PROJECT_DIR$/web/interviews/templates/interviews/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scrapy_dockerfile" afterPath="$PROJECT_DIR$/scrapy_dockerfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/interviews/templates/interviews/index.html" afterPath="$PROJECT_DIR$/web/interviews/templates/interviews/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/web_scrapy/web_scrapy/spiders/1p3.py" afterPath="$PROJECT_DIR$/web/web_scrapy/web_scrapy/spiders/1p3.py" />
     </list>
     <ignored path="django.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,41 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="search.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/interviews/templates/interviews/search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
+            <state relative-caret-position="-1572">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/interviews/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2398">
-              <caret line="115" column="36" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/interviews/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/interviews/static/js/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="29" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -79,8 +45,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/interviews/templates/interviews/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+            <state relative-caret-position="278">
+              <caret line="79" column="102" selection-start-line="79" selection-start-column="102" selection-end-line="79" selection-end-column="102" />
               <folding />
             </state>
           </provider>
@@ -91,6 +57,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="308">
               <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/web_django/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/web_scrapy/web_scrapy/items.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -131,13 +117,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="1p3.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/web_scrapy/web_scrapy/spiders/1p3.py">
+      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/web_scrapy/web_scrapy/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="618">
-              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+              <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
               <folding>
-                <marker date="1468757681000" expanded="true" signature="823:855" ph="SELECT link interviews_post" />
+                <marker date="1469608822000" expanded="true" signature="772:817" ph="SELECT * FRO... interviews_post" />
+                <marker date="1469608822000" expanded="true" signature="1850:2001" ph="INSERT INTO interviews_post... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1p3.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/web_scrapy/web_scrapy/spiders/1p3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="58" column="54" selection-start-line="58" selection-start-column="54" selection-end-line="58" selection-end-column="54" />
+              <folding>
+                <marker date="1469708578000" expanded="true" signature="823:855" ph="SELECT link interviews_post" />
               </folding>
             </state>
           </provider>
@@ -184,7 +183,6 @@
         <option value="$PROJECT_DIR$/web/interviews/static/css/newest.css" />
         <option value="$PROJECT_DIR$/web/interviews/templates/interviews/newest.html" />
         <option value="$PROJECT_DIR$/web/interviews/static/js/newest.js" />
-        <option value="$PROJECT_DIR$/web/web_scrapy/web_scrapy/spiders/1p3.py" />
         <option value="$PROJECT_DIR$/web/interviews/models.py" />
         <option value="$PROJECT_DIR$/web/interviews/urls.py" />
         <option value="$PROJECT_DIR$/web/interviews/tests.py" />
@@ -195,12 +193,13 @@
         <option value="$PROJECT_DIR$/web/web_scrapy/web_scrapy/pipelines.py" />
         <option value="$PROJECT_DIR$/web/web_django/settings.py" />
         <option value="$PROJECT_DIR$/web/interviews/static/js/index.js" />
-        <option value="$PROJECT_DIR$/web/interviews/templates/interviews/index.html" />
         <option value="$PROJECT_DIR$/web/interviews/views.py" />
         <option value="$PROJECT_DIR$/web/interviews/static/js/search.js" />
         <option value="$PROJECT_DIR$/scrapy/web_scrapy/web_scrapy/pipelines.py" />
         <option value="$PROJECT_DIR$/scrapy/web_scrapy/postgre_script.py" />
         <option value="$PROJECT_DIR$/web/interviews/templates/interviews/search.html" />
+        <option value="$PROJECT_DIR$/web/interviews/templates/interviews/index.html" />
+        <option value="$PROJECT_DIR$/web/web_scrapy/web_scrapy/spiders/1p3.py" />
       </list>
     </option>
   </component>
@@ -435,50 +434,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web_django" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interviews" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="django" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interviews" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interviews" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1101,34 +1056,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/web_scrapy/web_scrapy/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/web_scrapy/web_scrapy/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
-          <folding>
-            <element signature="e#193#218#0" expanded="false" />
-            <marker date="1469608822000" expanded="true" signature="772:817" ph="SELECT * FRO... interviews_post" />
-            <marker date="1469608822000" expanded="true" signature="1850:2001" ph="INSERT INTO interviews_post... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/web_django/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/web_django/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3102">
@@ -1188,14 +1115,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/interviews/templates/interviews/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scrapy/web_scrapy/postgre_script.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -1206,21 +1125,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/web_scrapy/web_scrapy/spiders/1p3.py">
+    <entry file="file://$PROJECT_DIR$/web/interviews/templates/interviews/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1572">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/interviews/templates/interviews/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="79" column="102" selection-start-line="79" selection-start-column="102" selection-end-line="79" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/web_scrapy/web_scrapy/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
           <folding>
-            <marker date="1468757681000" expanded="true" signature="823:855" ph="SELECT link interviews_post" />
+            <marker date="1469608822000" expanded="true" signature="772:817" ph="SELECT * FRO... interviews_post" />
+            <marker date="1469608822000" expanded="true" signature="1850:2001" ph="INSERT INTO interviews_post... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/interviews/templates/interviews/search.html">
+    <entry file="file://$PROJECT_DIR$/web/web_scrapy/web_scrapy/items.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="242">
+          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/web_django/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/web_scrapy/web_scrapy/spiders/1p3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="58" column="54" selection-start-line="58" selection-start-column="54" selection-end-line="58" selection-end-column="54" />
+          <folding>
+            <marker date="1469708578000" expanded="true" signature="823:855" ph="SELECT link interviews_post" />
+          </folding>
         </state>
       </provider>
     </entry>

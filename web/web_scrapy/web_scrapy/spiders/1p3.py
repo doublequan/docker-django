@@ -56,7 +56,7 @@ class oneP3Spider(scrapy.Spider):
         title = postlist.xpath('//span[@id = \'thread_subject\']/text()').extract()[0].encode('utf-8')
         title = re.sub(r"'", "", title)
 
-        link = response.url
+        link = self.process_link_from1p3(response.url)
 
         first_floor = postlist.xpath('div[1]/table/tr/td[@class = \'plc\']')
         time_list = first_floor.xpath('//div[@class = \'authi\']/em/span/@title').extract()
@@ -86,6 +86,9 @@ class oneP3Spider(scrapy.Spider):
             return False
         else:
             return True
+
+    def process_link_from1p3(self, link_un):
+        return re.sub(r"&extra.*", "", link_un)
 
     def process_desc_from1p3(self, desc_un):
         desc = re.sub(r"(<.*?>)|(\n)", "", desc_un)
