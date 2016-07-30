@@ -2,8 +2,11 @@
 # -*-coding:utf-8-*-
 import base64
 import random
+from lxml import etree
+
 from scrapy.contrib.downloadermiddleware.useragent import UserAgentMiddleware
-from settings import PROXIES
+import requests
+
 
 class RotateUserAgentMiddleware(UserAgentMiddleware):
     """
@@ -61,10 +64,29 @@ class RotateUserAgentMiddleware(UserAgentMiddleware):
 
 class ProxyMiddleware(object):
     def __init__(self):
-        pass
+        self.PROXIES = []
+        print "~~~~~~~~~~~~~~~ Make ip request  ~~~~~~~~~~~~~~~~~~~"
+        # r = requests.get("http://proxy.goubanjia.com/free/")
+        r = requests.get("http://proxy.goubanjia.com/free/gnpt/index.shtml")
+        # r = requests.get("http://proxy.goubanjia.com/free/gngn/index.shtml")
+        page = etree.HTML(r.content)
+        ips = page.xpath("//td[@class='ip']")
+        # help(ips[0])
+        for ip in ips:
+            ipstr = ""
+            for child in ip.getchildren():
+                style = child.get(key='style')
+                if child.text and not (style and style.find("none") != -1):
+                    ipstr += child.text
+            ip_port = ipstr + ":" + ip.getnext().text
+            self.PROXIES += [{
+                'ip_port': ip_port,
+                'user_pass': '',
+            }]
+        print self.PROXIES
 
     def process_request(self, request, spider):
-        proxy = random.choice(PROXIES)
+        proxy = random.choice(self.PROXIES)
         if proxy['user_pass'] is not None:
             request.meta['proxy'] = "http://%s" % proxy['ip_port']
             encoded_user_pass = base64.encodestring(proxy['user_pass'])
