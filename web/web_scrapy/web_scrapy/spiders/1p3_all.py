@@ -14,14 +14,14 @@ class oneP3Spider(scrapy.Spider):
     name = "1p3_all"
     allowed_domains = ["1point3acres.com"]
     start_urls = [
-        "http://www.1point3acres.com/bbs/forum-28-4.html",
-        "http://www.1point3acres.com/bbs/forum-28-5.html",
-        "http://www.1point3acres.com/bbs/forum-28-6.html",
+        "http://www.1point3acres.com/bbs/forum-28-1.html",
+        "http://www.1point3acres.com/bbs/forum-28-2.html",
+        "http://www.1point3acres.com/bbs/forum-28-3.html",
         # "http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=187005&extra=page%3D1%26filter%3Dsortid%26sortid%3D192%26sortid%3D192",
     ]
 
     def __init__(self):
-        for p in xrange(120, 129):
+        for p in xrange(50, 129):
             self.start_urls += ["http://www.1point3acres.com/bbs/forum-28-" + str(p) + ".html"]
 
 

@@ -212,14 +212,14 @@ a:link {
         display: none;
     }
 
-    /*#form-search .search{*/
-        /*width: 200px;*/
-    /*}*/
+    #form-search .search{
+        width: 200px;
+    }
 }
 
-@media(max-width:630px) {
+@media(max-width:640px) {
     .navbar .navbar-form {
-        width: 350px;
+        /*width: 350px;*/
         /*padding-left:0;*/
         /*padding-right:0;*/
     }
@@ -261,7 +261,7 @@ a:link {
 }
 
 .container .navbar-header {
-    margin-left: 5px;
+    margin-left: 10px;
     margin-right: 5px;
 }
 
