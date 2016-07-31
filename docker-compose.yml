@@ -22,7 +22,7 @@ services:
       - ./web:/code
     ports:
       - "8000:8000"
-      - "7777:80"
+      - "80:80"
     depends_on: 
       - db
     container_name: web_django
