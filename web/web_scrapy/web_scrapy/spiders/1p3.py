@@ -8,6 +8,7 @@ parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parentdir)
 from items import postItem
 import psycopg2
+import chardet
 
 class oneP3Spider(scrapy.Spider):
     name = "1p3"
@@ -45,6 +46,8 @@ class oneP3Spider(scrapy.Spider):
 
         for a in a_list:
             a_href = a.encode("utf-8")
+            a_href = self.process_link_from1p3(a_href)
+            # print a_href
             if self.check_duplication(a_href):
                 # print "Yielding New Request :" + a_href
                 yield scrapy.Request(a_href, callback=self.parse_page)
@@ -52,11 +55,18 @@ class oneP3Spider(scrapy.Spider):
     def parse_page(self, response):
         self.logger.info("***Parsing Post Page***")
 
+        # print type(response.text)
+        # print chardet.detect(u"抱歉，本帖要求阅读权限高于")
+        if response.text.find(u"抱歉，本帖要求阅读权限高于") != -1:
+            print "%%%%%%%%%%%%%%%%%%%%% FUCK%%%%%%%%%%%%%%%%%%%%%%%%"
+            print response.url
+            return
+
         postlist = response.xpath('//div[@id = \'postlist\']')
         title = postlist.xpath('//span[@id = \'thread_subject\']/text()').extract()[0].encode('utf-8')
         title = re.sub(r"'", "", title)
 
-        link = self.process_link_from1p3(response.url)
+        link = response.url
 
         first_floor = postlist.xpath('div[1]/table/tr/td[@class = \'plc\']')
         time_list = first_floor.xpath('//div[@class = \'authi\']/em/span/@title').extract()

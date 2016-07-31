@@ -4,6 +4,7 @@ import base64
 import random
 from lxml import etree
 
+
 from scrapy.contrib.downloadermiddleware.useragent import UserAgentMiddleware
 import requests
 
@@ -64,26 +65,37 @@ class RotateUserAgentMiddleware(UserAgentMiddleware):
 
 class ProxyMiddleware(object):
     def __init__(self):
-        self.PROXIES = []
-        print "~~~~~~~~~~~~~~~ Make ip request  ~~~~~~~~~~~~~~~~~~~"
-        # r = requests.get("http://proxy.goubanjia.com/free/")
-        r = requests.get("http://proxy.goubanjia.com/free/gnpt/index.shtml")
-        # r = requests.get("http://proxy.goubanjia.com/free/gngn/index.shtml")
-        page = etree.HTML(r.content)
-        ips = page.xpath("//td[@class='ip']")
-        # help(ips[0])
-        for ip in ips:
-            ipstr = ""
-            for child in ip.getchildren():
-                style = child.get(key='style')
-                if child.text and not (style and style.find("none") != -1):
-                    ipstr += child.text
-            ip_port = ipstr + ":" + ip.getnext().text
+        self.PROXIES = [
+            # {'ip_port': "124.16.70.11:3128", 'user_pass': ''},
+            # {'ip_port': "112.64.142.254:81", 'user_pass': ''}
+        ]
+        print "~~~~~~~~~~~~~~~ Making ip request  ~~~~~~~~~~~~~~~~~~~"
+        req_header = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
+            'Accept': 'text/html;q=0.9,*/*;q=0.8',
+            'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+            'Accept-Encoding': 'gzip',
+            'Connection': 'close',
+            'Referer': None,
+            }
+        r = requests.get("http://www.xicidaili.com/", headers=req_header)
+        content = r.content
+        trs = etree.HTML(content).xpath("//tr[@class='odd']")
+        # help(trs[0])
+        for tr in trs:
+            # print tr.xpath("td[2]")[0].text
+            ip_port = tr.xpath("td[2]")[0].text + ":" + tr.xpath("td[3]")[0].text
             self.PROXIES += [{
                 'ip_port': ip_port,
                 'user_pass': '',
             }]
-        print self.PROXIES
+            tr = tr.getnext()
+            ip_port = tr.xpath("td[2]")[0].text + ":" + tr.xpath("td[3]")[0].text
+            self.PROXIES += [{
+                'ip_port': ip_port,
+                'user_pass': '',
+            }]
+        print (self.PROXIES)
 
     def process_request(self, request, spider):
         proxy = random.choice(self.PROXIES)
