@@ -10,25 +10,25 @@ import requests
 from lxml import etree
 import re
 
-req_header = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
-    'Accept':'text/html;q=0.9,*/*;q=0.8',
-    'Accept-Charset':'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
-    'Accept-Encoding':'gzip',
-    'Connection':'close',
-    'Referer':None,
-}
-r = requests.get("http://www.xicidaili.com/", headers=req_header)
-content = r.content
-trs = etree.HTML(content).xpath("//tr[@class='odd']")
-# help(trs[0])
-ips = []
-for tr in trs[:10]:
-    # print tr.xpath("td[2]")[0].text
-    ips += [tr.xpath("td[2]")[0].text + ":" + tr.xpath("td[3]")[0].text]
-    next = tr.getnext()
-    ips += [next.xpath("td[2]")[0].text + ":" + next.xpath("td[3]")[0].text]
+# req_header = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
+#     'Accept':'text/html;q=0.9,*/*;q=0.8',
+#     'Accept-Charset':'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+#     'Accept-Encoding':'gzip',
+#     'Connection':'close',
+#     'Referer':None,
+# }
+# r = requests.get("http://www.xicidaili.com/", headers=req_header)
+# content = r.content
+# trs = etree.HTML(content).xpath("//tr[@class='odd']")
+# # help(trs[0])
+# ips = []
+# for tr in trs[:10]:
+#     # print tr.xpath("td[2]")[0].text
+#     ips += [tr.xpath("td[2]")[0].text + ":" + tr.xpath("td[3]")[0].text]
+#     next = tr.getnext()
+#     ips += [next.xpath("td[2]")[0].text + ":" + next.xpath("td[3]")[0].text]
 
-print ips
+# print ips
 
 # content = '''
 # {"i":"104.28.2.193","p":"80","c": {"f":"us","n": "United States"},"s":"0","tp":"HTTP","a":"Low","t":"700"},
@@ -62,3 +62,4 @@ print ips
 #     print (ipstr+":" +ip.getnext().text)
 
 
+print range(1, 10)
