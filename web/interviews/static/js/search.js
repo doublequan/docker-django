@@ -6,13 +6,17 @@ $(document).ready(function () {
         $('#form-search').submit();
     });
 
+
+
 });
 
 function searchByWd(wd) {
 
     // console.log($('.form-control').val());
-    $('.form-control').val(wd);
-    $('#form-search').submit();
+    // $('.form-control').val(wd);
+    // $('#form-search').submit();
+
+    window.location.href = "/search-1?wd=" + encodeURI(wd);
 
 }
 
