@@ -10,14 +10,17 @@ $(document).ready(function () {
 
 });
 
-function searchByWd(wd) {
+function httpGet(theUrl, wd) {
 
-    // console.log($('.form-control').val());
-    // $('.form-control').val(wd);
-    // $('#form-search').submit();
+    wd = encodeURI(wd);
+    // var url = window.location.href;     // Returns full URL
 
-    window.location.href = "/search-1?wd=" + encodeURI(wd);
+    var p = {
+        wd: wd
+    }
+    var target = theUrl + "?" + $.param(p)
 
+    window.location.href = target;
 }
 
 

@@ -62,4 +62,9 @@ import re
 #     print (ipstr+":" +ip.getnext().text)
 
 
-print range(1, 10)
+# print range(1, 10)
+
+content = "dasd %s %d %s" % ("dad", 555, "tttt")
+# port_list = re.findall(r'(?<="p":").*(?=","c")', content)
+
+print content

@@ -44,7 +44,7 @@
                     <p>北美 IT 岗位面试经验搜索<br>
                         <span class="package-amount">已收录了 <strong>{{ total_num }}</strong> 个面经</span>
                     </p>
-                    <form id="form-search" role="search" method="get" action="{% url 'interviews:search' 1%}">
+                    <form id="form-search" role="search" method="get" action="{% url 'interviews:search'%}">
                         <div class="form-group">
                             <input type="text" name="wd" class="form-control search clearable" placeholder="{{ tips }}">
                             <i class="fa fa-search" id="i-search"></i>
@@ -61,7 +61,7 @@
             <div class="board col-xs-12 col-md-12 col-lg-6">
                 <div class="board-header">
                     <span>最新面经</span>
-                    <a href="{% url 'interviews:search' 1%}">More</a>
+                    <a href="{% url 'interviews:search'%}">More</a>
                 </div>
 
                 <div class="board-content">
@@ -81,7 +81,7 @@
             <div class="board col-xs-12 col-md-6 col-lg-3">
                 <div class="board-header">
                     <span>{{ board_name }}</span>
-                    <a href="javascript:httpGet('{% url 'interviews:search' 1%}', '{{ board_name }}')">More</a>
+                    <a href="javascript:httpGet('{% url 'interviews:search'%}', '{{ board_name }}')">More</a>
                 </div>
 
                 <div class="board-content">

@@ -47,7 +47,7 @@
 {#               </div>#}
 {#            </div>#}
 {#         </form>#}
-         <form id="form-search" class="navbar-form pull-left" role="search" method="get" action="{% url 'interviews:search' 1%}">
+         <form id="form-search" class="navbar-form pull-left" role="search" method="get" action="{% url 'interviews:search'%}">
            <div class="form-group">
              <input type="text" name="wd" class="form-control search clearable" placeholder="{{ tips }}" value="{{ search_keyword }}">
              <i class="fa fa-search" id="i-search"></i>
@@ -85,7 +85,7 @@
                 <div class="content">
                     <a name="{{ forloop.counter }}" class="content-title" href="{{ item.link }}" target="_blank">{{ item.title }}</a>
                     {% for tag in tags %}
-                    <span class="result-tag" onclick="javascript:searchByWd('{{ tag }}')">{{ tag }}</span>
+                    <span class="result-tag" onclick="javascript:httpGet('{% url 'interviews:search' %}', '{{ tag }}')">{{ tag }}</span>
                     {% endfor %}
                     <p>
                         <span class="content-time">{{ item.create_time }} - </span>
@@ -112,24 +112,24 @@
 <div id="page">
 
     {% if prev_page %}
-    <a href="{% url 'interviews:search' prev_page %}" class="n">&lt;上一页</a>
+    <a href="{{ prev_page }}" class="n">&lt;上一页</a>
     {% endif %}
 
-    {% for page_id in pages %}
+    {% for page_id, page_url in pages %}
 
         {% if page_id == current_page_num %}
             <strong>
                 <span class="pc">{{ page_id }}</span>
             </strong>
         {% else %}
-            <a href="{% url 'interviews:search' page_id %}">
+            <a href="{{ page_url }}">
                 <span class="pc">{{ page_id }}</span>
             </a>
         {% endif %}
     {% endfor %}
 
-    {% if next_page <= page_num  %}
-    <a href="{% url 'interviews:search' next_page %}" class="n">下一页&gt;</a>
+    {% if next_page %}
+    <a href="{{ next_page }}" class="n">下一页&gt;</a>
     {% endif %}
 </div>
 

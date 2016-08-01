@@ -6,6 +6,10 @@ from django.shortcuts import render, get_object_or_404
 from models import Post
 import chardet
 import random
+import re
+
+from django.utils.http import urlunquote, urlquote
+
 # Create your views here.
 
 tips = ("搜索关键词，例如：Google",
@@ -55,7 +59,15 @@ def index(request):
     return render(request, 'interviews/index.html', content)
 
 
-def search(request, current_page_num):
+def search(request):
+
+    if request.GET.get('pn'):
+        current_page_id = request.GET.get('pn')
+    else:
+        current_page_id = 1
+    current_page_id = int(current_page_id)
+
+
     # items = Post.objects.order_by("create_time")[:10]
     result_num_each_page = 10
 
@@ -63,13 +75,10 @@ def search(request, current_page_num):
     keyword = ""
     if request.GET.get('wd') and request.GET.get('wd').encode('utf-8') != "":
         keyword = request.GET.get('wd').encode('utf-8')
-        wds = keyword.split(" ")
-        wds = filter(None, wds)
-        print wds
+        # wds = keyword.split(" ")
+        # wds = filter(None, wds)
+        # print wds
         # Sorting Algorithm
-
-
-
 
         # End of Sorting
 
@@ -82,20 +91,38 @@ def search(request, current_page_num):
     # print chardet.detect(request.GET.get('wd').encode('utf-8'))
 
     result_num = len(all_posts)
-    page_num = result_num / result_num_each_page + 1
+    total_page_num = result_num / result_num_each_page + 1
 
-    current_page_num = int(current_page_num)
-
-    if current_page_num > page_num or current_page_num <= 0:
+    if current_page_id > total_page_num or current_page_id <= 0:
         raise Http404("No Such Page!")
 
-    if page_num <= 10:
-        pages = range(1, page_num + 1)
-    else:
-        start_page = max(1, current_page_num - 4)
-        pages = range(start_page, start_page + 10)
+    prev_page = False
+    next_page = False
+    if current_page_id > 1:
+        url = "/search?pn=%d&wd=%s" % (current_page_id - 1, urlquote(keyword))
+        prev_page = url
+    if current_page_id < total_page_num:
+        url = "/search?pn=%d&wd=%s" % (current_page_id + 1, urlquote(keyword))
+        next_page = url
 
-    start_id = (current_page_num - 1) * result_num_each_page
+    pages = []
+    if total_page_num <= 10:
+        for i in range(1, total_page_num + 1):
+            url = "/search?pn=%d&wd=%s" % (i, urlquote(keyword))
+            pages += [(i, url)]
+            # print url
+    else:
+        start_page = max(1, current_page_id - 4)
+        end_page = min(total_page_num, current_page_id + 5)
+        if end_page - start_page + 1 < 10:
+            if end_page == total_page_num:
+                start_page = end_page - 9
+
+        for i in range(start_page, start_page + 10):
+            url = "/search?pn=%d&wd=%s" % (i, urlquote(keyword))
+            pages += [(i, url)]
+
+    start_id = (current_page_id - 1) * result_num_each_page
     end_id = start_id + result_num_each_page
     item_list = all_posts.order_by('-create_time')[start_id : end_id]
     items = []
@@ -108,10 +135,10 @@ def search(request, current_page_num):
         "items": items,
         "result_num": result_num,
         "pages": pages,
-        "page_num": page_num,
-        "current_page_num": current_page_num,
-        "prev_page": current_page_num - 1,
-        "next_page": current_page_num + 1,
+        "page_num": total_page_num,
+        "current_page_num": current_page_id,
+        "prev_page": prev_page,
+        "next_page": next_page,
         "search_keyword": keyword,
         "tips": random.choice(tips),
     }
