@@ -106,19 +106,19 @@ def search(request):
         next_page = url
 
     pages = []
-    if total_page_num <= 10:
+    if total_page_num <= 9:
         for i in range(1, total_page_num + 1):
             url = "/search?pn=%d&wd=%s" % (i, urlquote(keyword))
             pages += [(i, url)]
             # print url
     else:
         start_page = max(1, current_page_id - 4)
-        end_page = min(total_page_num, current_page_id + 5)
-        if end_page - start_page + 1 < 10:
+        end_page = min(total_page_num, current_page_id + 4)
+        if end_page - start_page + 1 < 9:
             if end_page == total_page_num:
-                start_page = end_page - 9
+                start_page = end_page - 8
 
-        for i in range(start_page, start_page + 10):
+        for i in range(start_page, start_page + 9):
             url = "/search?pn=%d&wd=%s" % (i, urlquote(keyword))
             pages += [(i, url)]
 
