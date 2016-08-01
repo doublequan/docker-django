@@ -21,7 +21,7 @@ class oneP3Spider(scrapy.Spider):
     ]
 
     def __init__(self):
-        for p in xrange(50, 129):
+        for p in xrange(1, 129):
             self.start_urls += ["http://www.1point3acres.com/bbs/forum-28-" + str(p) + ".html"]
 
 
