@@ -160,6 +160,8 @@ a:link {
 @media (min-width: 400px) and (max-width: 609px) {
     #form-search {
         width: 80%;
+        padding-left: 0px;
+        padding-right: 0px;
     }
     .navbar .container .navbar-brand {
         margin-left: -20px;

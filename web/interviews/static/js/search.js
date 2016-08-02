@@ -2,6 +2,17 @@
 
 $(document).ready(function () {
 
+    $('#form-search').submit(function () {
+        var wd = $('#form-search .form-control').val();
+
+        if (wd == "") {
+            window.location.href = "/";
+            return false;
+        } else {
+            return true;
+        }
+    });
+
     $('#i-search').click(function () {
         $('#form-search').submit();
     });
