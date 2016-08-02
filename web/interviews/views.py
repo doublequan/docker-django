@@ -10,11 +10,29 @@ import re
 
 from django.utils.http import urlunquote, urlquote
 
-# Create your views here.
-
+# tips displayed in search placeholder
 tips = ("搜索关键词，例如：Google",
         "空格隔开关键词,例如:Amazon onsite",
         )
+
+# Tags for keyword transfer while searching
+# All the contents will be in lowercase
+TAGS = {
+    # Companies
+    'Google': ('google', 'googl', 'g家', '谷歌'),
+    'Amazon': ('amazon', 'a家', '亚麻', '亚马逊', '亚玛逊'),
+    'LinkedIn': ('linkedin', 'linkin', 'l家', '领英'),
+    'Facebook': ('fb', 'facebook', '脸书', 'f家'),
+    'Microsoft': ('microsoft', 'm家', '微软'),
+    'Airbnb': ('airbnb',),
+    'Uber': ('uber', '优步'),
+
+    # Other Keywords
+    'Onsite': ('onsite',),
+    'Resume': ('resume', '简历'),
+    'OA': ('oa', '在线测试'),
+    'Intern': ('intern', 'internship', '实习'),
+}
 
 def index(request):
     all_posts = Post.objects.all()
@@ -43,13 +61,6 @@ def index(request):
 
     # print all_posts[0].create_time.strftime("%d %b")
 
-    # boards = [("Facebook", example),
-    #           ("LinkedIn", example),
-    #           ("Amazon", example),
-    #           ("Google", example),
-    #           ("Uber", example),
-    #           ("Airbnb", example)]
-
     content = {
         "total_num": len(all_posts),
         "content_newest": content_newest,
@@ -75,17 +86,29 @@ def search(request):
     keyword = ""
     if request.GET.get('wd') and request.GET.get('wd').encode('utf-8') != "":
         keyword = request.GET.get('wd').encode('utf-8')
-        # wds = keyword.split(" ")
-        # wds = filter(None, wds)
-        # print wds
+        wds = keyword.split(" ")
+        wds = filter(None, wds)
+        # transfer specific kw to tags
+        for i in range(0, len(wds)):
+            for (key, values) in TAGS.items():
+                if wds[i] in values:
+                    wds[i] = key
+                    break
+
+        print wds
+
+        # search using multiple keywords
+        args = ()
+        for wd in wds:
+            args += (Q(title__icontains=wd) |
+                     Q(description__icontains=wd) |
+                     Q(tag__icontains=wd),)
+
+        all_posts = Post.objects.filter(*args)
+
         # Sorting Algorithm
 
         # End of Sorting
-
-        args = (Q(title__icontains=keyword) |
-                Q(description__icontains=keyword) |
-                Q(tag__icontains=keyword),)
-        all_posts = Post.objects.filter(*args)
     else:
         all_posts = Post.objects.all()
     # print chardet.detect(request.GET.get('wd').encode('utf-8'))

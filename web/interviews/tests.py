@@ -64,7 +64,8 @@ import re
 
 # print range(1, 10)
 
-content = "dasd %s %d %s" % ("dad", 555, "tttt")
+content = (1,2)
 # port_list = re.findall(r'(?<="p":").*(?=","c")', content)
+content += (3,)
 
 print content
