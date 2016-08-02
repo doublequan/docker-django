@@ -61,17 +61,17 @@ def index(request):
 
 def search(request):
 
+    # get the GET params from request
     if request.GET.get('pn'):
         current_page_id = request.GET.get('pn')
     else:
         current_page_id = 1
     current_page_id = int(current_page_id)
 
-
-    # items = Post.objects.order_by("create_time")[:10]
+    # set the results you wanna to show on each page
     result_num_each_page = 10
 
-    # print chardet.detect(request.GET.get('wd'))
+    # get all required posts from db
     keyword = ""
     if request.GET.get('wd') and request.GET.get('wd').encode('utf-8') != "":
         keyword = request.GET.get('wd').encode('utf-8')
@@ -90,12 +90,16 @@ def search(request):
         all_posts = Post.objects.all()
     # print chardet.detect(request.GET.get('wd').encode('utf-8'))
 
+    # get total nums of results and calculate total page nums
     result_num = len(all_posts)
     total_page_num = result_num / result_num_each_page + 1
 
+    # if the required page id is invalid, return 404 page
     if current_page_id > total_page_num or current_page_id <= 0:
         raise Http404("No Such Page!")
 
+    # deal with next_page, prev_page
+    # False if need to be disabled, otherwise the target url
     prev_page = False
     next_page = False
     if current_page_id > 1:
@@ -105,23 +109,30 @@ def search(request):
         url = "/search?pn=%d&wd=%s" % (current_page_id + 1, urlquote(keyword))
         next_page = url
 
+    # deal with pages
+    # False if no need to show page
+    # otherwise make it a list of (id of page, url of page)
     pages = []
-    if total_page_num <= 9:
+    if total_page_num == 1:
+        pages = False
+    elif total_page_num <= 5:
         for i in range(1, total_page_num + 1):
             url = "/search?pn=%d&wd=%s" % (i, urlquote(keyword))
             pages += [(i, url)]
             # print url
     else:
-        start_page = max(1, current_page_id - 4)
-        end_page = min(total_page_num, current_page_id + 4)
-        if end_page - start_page + 1 < 9:
+        start_page = max(1, current_page_id - 2)
+        end_page = min(total_page_num, current_page_id + 2)
+        if end_page - start_page + 1 < 5:
             if end_page == total_page_num:
-                start_page = end_page - 8
+                start_page = end_page - 4
 
-        for i in range(start_page, start_page + 9):
+        for i in range(start_page, start_page + 5):
             url = "/search?pn=%d&wd=%s" % (i, urlquote(keyword))
             pages += [(i, url)]
 
+    # calculate the items we are going to show
+    # put the items and their tags in the list [items]
     start_id = (current_page_id - 1) * result_num_each_page
     end_id = start_id + result_num_each_page
     item_list = all_posts.order_by('-create_time')[start_id : end_id]
@@ -130,7 +141,10 @@ def search(request):
         tags = [n for n in item.tag.split(' ') if n.strip()]
         items += [[item, tags]]
 
-    # print items
+    # calculate the truely item start and end id
+    start_id += 1
+    end_id = start_id + len(item_list) - 1
+
     content = {
         "items": items,
         "result_num": result_num,
@@ -139,6 +153,8 @@ def search(request):
         "current_page_num": current_page_id,
         "prev_page": prev_page,
         "next_page": next_page,
+        "item_start_id": start_id,
+        "item_end_id": end_id,
         "search_keyword": keyword,
         "tips": random.choice(tips),
     }

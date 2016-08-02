@@ -46,22 +46,19 @@
 </div>
 
 
-<div id="wrapper">
-<!--<header class="site-header">-->
-    <div class="container search-bar">
+<div>
 
+
+    <div class="container">
         <div class="row">
             <div class="col-xs-12">
                 <p>共为您找到{{ result_num }}个结果</p>
             </div>
         </div>
-    </div>
-<!--</header>-->
-
-    <div class="container">
         <div class="row results">
+
+            <div class="col-xs-12 col-md-8 content-wrapper">
             {% for item, tags in items %}
-            <div class="col-xs-10 col-md-7 content-wrapper">
                 <div class="content">
                     <a name="{{ forloop.counter }}" class="content-title" href="{{ item.link }}" target="_blank">{{ item.title }}</a>
                     {% for tag in tags %}
@@ -83,35 +80,91 @@
                         <a class="content-source" href="{{ item.link }}" target="_blank">查看原帖</a>
                     </div>
                 </div>
-            </div>
             {% endfor %}
+
+            {% if pages %}
+                <ul class="pagination pagination">
+                    {% if prev_page %}
+                    <li class="prev">
+                        <a rel="prev" href="{{ prev_page }}">← 上一页</a>
+                    </li>
+                    {% else %}
+                    <li class="prev disabled">
+                        <span>← 上一页</span>
+                    </li>
+                    {% endif %}
+
+                    {% for page_id, page_url in pages %}
+
+                        {% if page_id == current_page_num %}
+                        <li class="active">
+                            <a href="{{ page_url }}">{{ page_id }}</a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{{ page_url }}">{{ page_id }}</a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if next_page %}
+                    <li class="next">
+                        <a rel="next" href="{{ next_page }}">下一页 →</a>
+                    </li>
+                    {% else %}
+                    <li class="next disabled">
+                        <span rel="next">下一页 →</span>
+                    </li>
+                    {% endif %}
+
+                </ul>
+            {% endif %}
+                <p>
+                    <small>
+                        Displaying results
+                        {% if item_start_id > item_end_id %}
+                        0
+                        {% else %}
+                        <b>{{ item_start_id }}&nbsp;-&nbsp;{{ item_end_id }}</b>
+                        {% endif %}
+                        of <b>{{ result_num }}</b> in total
+{#                        -#}
+{#                        <a class="rss" href="/search.atom?order=desc&amp;page=1&amp;q=s&amp;sort=created_at">#}
+{#                            <i class="fa fa-rss-square"></i>#}
+{#                            Subscribe to an RSS feed of this search#}
+{#                        </a>#}
+                    </small>
+                </p>
+
+            </div>
+
         </div> <!-- / row -->
     </div>
 
 
-<div id="page">
-
-    {% if prev_page %}
-    <a href="{{ prev_page }}" class="n">&lt;上一页</a>
-    {% endif %}
-
-    {% for page_id, page_url in pages %}
-
-        {% if page_id == current_page_num %}
-            <strong>
-                <span class="pc">{{ page_id }}</span>
-            </strong>
-        {% else %}
-            <a href="{{ page_url }}">
-                <span class="pc">{{ page_id }}</span>
-            </a>
-        {% endif %}
-    {% endfor %}
-
-    {% if next_page %}
-    <a href="{{ next_page }}" class="n">下一页&gt;</a>
-    {% endif %}
-</div>
+{#<div id="page">#}
+{##}
+{#    {% if prev_page %}#}
+{#    <a href="{{ prev_page }}" class="n">&lt;上一页</a>#}
+{#    {% endif %}#}
+{##}
+{#    {% for page_id, page_url in pages %}#}
+{##}
+{#        {% if page_id == current_page_num %}#}
+{#            <strong>#}
+{#                <span class="pc">{{ page_id }}</span>#}
+{#            </strong>#}
+{#        {% else %}#}
+{#            <a href="{{ page_url }}">#}
+{#                <span class="pc">{{ page_id }}</span>#}
+{#            </a>#}
+{#        {% endif %}#}
+{#    {% endfor %}#}
+{##}
+{#    {% if next_page %}#}
+{#    <a href="{{ next_page }}" class="n">下一页&gt;</a>#}
+{#    {% endif %}#}
+{#</div>#}
 
 </div>
 
