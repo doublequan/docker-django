@@ -188,7 +188,8 @@ def search(request):
 
 
 def log(request):
-    logFile = open('/code/web_scrapy/logs/scrapy.log', 'r')
+    # logFile = open('/code/web_scrapy/logs/scrapy.log', 'r')
+    logFile = open('/code/web_scrapy/logs/shell.log', 'r')
     logFile.seek(-10000, os.SEEK_END)
     lines = logFile.readlines()[1:]
     # for row in lines[::-1]:
