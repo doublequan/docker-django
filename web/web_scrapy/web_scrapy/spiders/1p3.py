@@ -14,9 +14,13 @@ class oneP3Spider(scrapy.Spider):
     name = "1p3"
     allowed_domains = ["1point3acres.com"]
     start_urls = [
-        "http://www.1point3acres.com/bbs/forum-28-4.html",
-        "http://www.1point3acres.com/bbs/forum-28-5.html",
-        "http://www.1point3acres.com/bbs/forum-28-6.html",
+        "http://www.1point3acres.com/bbs/forum-28-1.html",
+        "http://www.1point3acres.com/bbs/forum-28-1.html",
+        "http://www.1point3acres.com/bbs/forum-28-1.html",
+        "http://www.1point3acres.com/bbs/forum-28-2.html",
+        "http://www.1point3acres.com/bbs/forum-28-2.html",
+        "http://www.1point3acres.com/bbs/forum-28-2.html",
+        # "http://www.1point3acres.com/bbs/forum-28-3.html",
         # "http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=187005&extra=page%3D1%26filter%3Dsortid%26sortid%3D192%26sortid%3D192",
     ]
 
@@ -92,9 +96,16 @@ class oneP3Spider(scrapy.Spider):
 
 
     def check_duplication(self, url):
+        '''
+
+        :param url:
+        :return: False if exist, otherwise true
+        '''
         if url in self.link_tuple:
+            self.logger.debug(url + " : exist!")
             return False
         else:
+            self.logger.debug(url + " : good!")
             return True
 
     def process_link_from1p3(self, link_un):

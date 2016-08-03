@@ -69,7 +69,7 @@ class ProxyMiddleware(object):
             # {'ip_port': "124.16.70.11:3128", 'user_pass': ''},
             # {'ip_port': "112.64.142.254:81", 'user_pass': ''}
         ]
-        print "~~~~~~~~~~~~~~~ Making ip request  ~~~~~~~~~~~~~~~~~~~"
+        # print "~~~~~~~~~~~~~~~ Making ip request  ~~~~~~~~~~~~~~~~~~~"
         req_header = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
             'Accept': 'text/html;q=0.9,*/*;q=0.8',
@@ -82,7 +82,7 @@ class ProxyMiddleware(object):
         content = r.content
         trs = etree.HTML(content).xpath("//tr[@class='odd']")
         # help(trs[0])
-        for tr in trs:
+        for tr in trs[:20]:
             # print tr.xpath("td[2]")[0].text
             ip_port = tr.xpath("td[2]")[0].text + ":" + tr.xpath("td[3]")[0].text
             self.PROXIES += [{
@@ -95,7 +95,7 @@ class ProxyMiddleware(object):
                 'ip_port': ip_port,
                 'user_pass': '',
             }]
-        print (self.PROXIES)
+        # print (self.PROXIES)
 
     def process_request(self, request, spider):
         proxy = random.choice(self.PROXIES)

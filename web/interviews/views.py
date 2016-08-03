@@ -1,4 +1,6 @@
 # coding: utf-8
+import os
+
 from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
@@ -185,3 +187,13 @@ def search(request):
     return render(request, 'interviews/search.html', content)
 
 
+def log(request):
+    logFile = open('/code/web_scrapy/logs/scrapy.log', 'r')
+    logFile.seek(-10000, os.SEEK_END)
+    lines = logFile.readlines()[1:]
+    # for row in lines[::-1]:
+
+    content = {
+        'lines': lines[::-1]
+    }
+    return render(request, 'interviews/log.html', content)

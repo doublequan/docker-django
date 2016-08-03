@@ -26,15 +26,21 @@ services:
     depends_on: 
       - db
     container_name: web_django
-  # scrapy:
-  #   build:
-  #     # context: .
-  #     dockerfile: scrapy_dockerfile
-  #   command: /bin/bash
-  #   volumes:
-  #     - ./scrapy:/code
-  #   depends_on:
-  #     - db
-  #   container_name: scrapy_container
+  scrapy_repeat:
+    image: billdqu/web_django
+    command: ./scrapy_repeat.sh
+    volumes:
+      - ./web/web_scrapy:/code
+    depends_on:
+      - db
+    container_name: scrapy_repeat
+  scrapy_all:
+    image: billdqu/web_django
+    command: ./scrapy_all.sh
+    volumes:
+      - ./web/web_scrapy:/code
+    depends_on:
+      - db
+    container_name: scrapy_all
 
 

@@ -64,8 +64,9 @@ import re
 
 # print range(1, 10)
 
-content = (1,2)
+content = [1,2,3,4,5]
 # port_list = re.findall(r'(?<="p":").*(?=","c")', content)
-content += (3,)
+# content += (3,)
+content = content[::-1]
 
-print content
+print content[1:]
